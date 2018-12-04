@@ -13,3 +13,29 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+
+
+html, body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+    background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(34, 116, 165, 1) 33%, rgba(68, 159, 229, 1) 89%);
+}
+.content {
+  flex: 1 0 auto;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+.center {
+  position: absolute;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+}
