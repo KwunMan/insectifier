@@ -4,7 +4,7 @@ require 'json'
 
 site = "https://www.inaturalist.org"
 app_id = '592487bc494045269753754e5085bc4fdfc438a2baf4ae0f711ff8a9ddb559ab'
-app_secret = '7ae2cc4c20ce20862da0847615339a50f5717ae8b7da0f587fdf438cc1451092'
+app_secret = '7ae2cc4c20ce20862da0847615339a50f5717ae8b7da0f587fdf438cc1451092ap'
 redirect_uri = 'http://localhost:3000/' # you can set this to some URL you control for testing
 
 # REQUEST AN AUTHORIZATION CODE
