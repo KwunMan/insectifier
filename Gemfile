@@ -18,7 +18,7 @@ gem 'uglifier'
 gem 'webpacker'
 ########## TEST API
 gem 'oauth2'
-gem 'google-cloud'
+gem 'google-cloud-vision'
 ###########
 group :development do
   gem 'web-console', '>= 3.3.0'
