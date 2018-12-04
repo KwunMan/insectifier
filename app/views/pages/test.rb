@@ -10,24 +10,10 @@ response = image_annotator.label_detection image: file_name
 response.responses.each do |res|
   puts "Labels:"
   res.label_annotations.each do |label|
-    puts label.class
+    puts label.score
     puts label.description
   end
 end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # require 'rubygems'
