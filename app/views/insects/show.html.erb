@@ -3,7 +3,7 @@
     <h1>insectified!</h1>
     <div class="container-content-page">
       <div style="text-align:center;" class="insect-container">
-        <%= image_tag("ladybug.jpg", height: 435, width: 260, :class => "photo") %>
+        <%= image_tag("ladybug.jpg",height: 435, width: 260, :class => "photo") %>
         <div style="text-align:left" class="name">
           <p>name:<br>
             <%= @insect.name %><br>
@@ -20,14 +20,14 @@
             <%= @insect.description %>
           </p>
         </div>
+        <div class="add-btn">
+          <div class="btn-main">
+            <div class="btn-main-wrapper"></div>
+            <div class="btn-main-white-top"></div>
+            <h3>Add to Collection</h3>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-  <div class="add-btn">
-    <div class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <h3>Add to Collection</h3>
     </div>
   </div>
 </div>
