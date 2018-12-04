@@ -11,7 +11,6 @@
   position: relative;
   border: 1px solid black;
   box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
-  ;
 
 }
 
@@ -23,14 +22,14 @@
 
 .btn-main-wrapper {
   min-height: 90px;
-  min-width: 140px;
+  min-width: 95%;
   border-radius: 4px;
 
   background-color: $yellow;
   opacity: 0.8;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  // top: 4px;
+  // left: 4px;
 
 
 }
@@ -40,12 +39,12 @@
   opacity: 0.2;
   height: 40px;
   position: absolute;
-  top: 5px;
-  min-width: 140px;
+  top: 4%;
+  min-width: 95%;
   border-radius: 4px;
   position: absolute;
-  top: 4px;
-  left: 4px;
+  // top: 4px;
+  // left: 4px;
 }
 
 .btn-main h3 {
