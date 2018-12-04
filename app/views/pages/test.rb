@@ -1,34 +1,19 @@
-require "google/cloud/vision"
-
-
 # Imports the Google Cloud client library
-require "google/cloud/storage"
+require "google/cloud/vision"
+image_annotator = Google::Cloud::Vision::ImageAnnotator.new
 
-# Your Google Cloud Platform project ID
-project_id = "insectifier"
+# The name of the image file to annotate
+file_name = "/Users/willem/code/rlwillem/insectifier/app/assets/images/deer.jpg"
 
-# Instantiates a client
-storage = Google::Cloud::Storage.new project_id: project_id
-
-# The name for the new bucket
-bucket_name = "my-new-bucket"
-
-# Creates the new bucket
-bucket = storage.create_bucket bucket_name
-
-puts "Bucket #{bucket.name} was created."
-image_annotator_client = Google::Cloud::Vision::ImageAnnotator.new
-gcs_image_uri = "../../../assets/images/deer.png"
-source = { gcs_image_uri: gcs_image_uri }
-image = { source: source }
-type = :LABEL_DETECTION
-features_element = { type: type }
-features = [features_element]
-requests_element = { image: image, features: features }
-requests = [requests_element]
-response = image_annotator_client.batch_annotate_images(requests)
-puts response
-
+# Performs label detection on the image file
+response = image_annotator.label_detection image: file_name
+response.responses.each do |res|
+  puts "Labels:"
+  res.label_annotations.each do |label|
+    puts label.class
+    puts label.description
+  end
+end
 
 
 
