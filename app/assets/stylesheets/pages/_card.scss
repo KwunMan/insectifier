@@ -1,0 +1,70 @@
+.card {
+  height: 90px;
+  width: 90px;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
+  border-radius: 5px;
+}
+
+.card-rare {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.card-name {
+  position: absolute;
+  top: -25px;
+  left: 5px;
+}
+
+.card-name h2 {
+  font-size: 24px;
+}
+
+.card-time {
+  font-size: 7px;
+  font-weight: lighter;
+  position: absolute;
+  top: -25px;
+  left: 5px;
+}
+
+.card-link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  z-index: 2;
+  background: black;
+  opacity: 0;
+}
+
+.card-link:hover {
+  opacity: 0.1;
+}
+
+.row-card {
+  margin-right: 2px;
+}
+
+div.col-xs-3 {
+  padding-left: 5px;
+  padding-bottom: 5px;
+  margin-top: 30px;
+  margin-bottom: -25px;
+}
+
+.insect-number {
+  width: 120px;
+}
+
+.insect-collection {
+  margin: 30px;
+}

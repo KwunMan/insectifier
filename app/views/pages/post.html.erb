@@ -1,0 +1,10 @@
+require 'rubygems'
+require 'rest_client'
+require 'json'
+token = '6fbdf3a02fbf8b8c314af9b8c70e65ba27575b9ac47e96f51b03c32c6c7d29be'
+site = "https://www.inaturalist.org"
+
+headers = {"Authorization" => "Bearer #{token}"}
+puts "POST /observation_photos/file=<%= image_tag('deer.jpg') %><, headers: #{headers.inspect}"
+ puts RestClient.get("#{site}/observations/", headers)
+puts

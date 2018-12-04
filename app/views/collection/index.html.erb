@@ -1,0 +1,33 @@
+<div class="wrapper-content-page">
+  <div class="container">
+    <% if @collection.present? %>
+    <div class="insect-collection">
+      <h2>Collection</h2>
+      <div class="insect-number">
+        <p>
+          <%= "# #{ pluralize @collection.size, "Insect" }" %>
+        </p>
+      </div>
+    </div>
+    <div class="row-card">
+      <% @collection.each do |insect| %>
+      <div class="cards">
+        <div class="col-xs-3">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#');">
+            <%= link_to "", insect_path(insect), class: 'card-link' %>
+            <div class="card-rare">
+              <%= insect.rarity %>
+            </div>
+            <div class="card-name">
+              <h2><%= insect.name %></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    <% else %>
+    <h2>You don't have any insect!</h2>
+    <% end %>
+  </div>
+</div>
