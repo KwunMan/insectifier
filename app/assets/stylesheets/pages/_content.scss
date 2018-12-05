@@ -55,8 +55,8 @@
   max-height: 100%;
   background-size: cover;
   border-radius: 10px;
-  padding-right: 15px;
-  margin-left: 30px;
+  padding-right: 5px;
+  margin-left: 15px;
 }
 
 .name {
@@ -64,7 +64,7 @@
   grid-column: 3 / span 1;
   border-radius: 10px;
   margin-left: 0px;
-  margin-right: 28px;
+  margin-right: 13px;
 }
 
 .description {
@@ -73,13 +73,23 @@
   color: white;
   background-color: black;
   height: 160px;
-  margin: 10px 28px 0px 30px;
+  margin: 10px 13px 0px 15px;
   border-radius: 10px;
 }
 
 .add-btn {
   grid-row: 3 / span 1;
   grid-column: 1 / span 3;
-  margin-right: 27px;
-  margin-left: 27px;
+  margin-right: 12px;
+  margin-left: 12px;
+}
+
+div.name ul {
+  list-style-type: none;
+  text-align: left;
+}
+
+div.name li {
+  margin-left: -37px;
+  padding-bottom: 5px;
 }
