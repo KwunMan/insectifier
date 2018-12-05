@@ -1,11 +1,10 @@
-  
 <footer>
   <div class="tabs">
-    <a class="tab active" href="#">
+    <%= link_to root_path, class: "tab" do %>
       <h3><i class="fas fa-home"></i></h3>
-    </a>
-    <a class="tab" href="#">
+    <% end %>
+    <%= link_to collections_path, class: "tab active" do %>
       <h3><i class="fas fa-book"></i></h3>
-    </a>
+    <% end %>
   </div>
 </footer>

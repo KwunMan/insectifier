@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Something
+  Insectifier
 <% end %>
 <div class="wrapper-main-page">
   <div class="home-logo">
@@ -13,8 +13,4 @@
     </div>
   </div>
 </div>
-<% content_for :home do %>
-  <%= render 'shared/footer' do %>
-    <%= yield :index %>
-  <% end %>
-<% end %>
+<%= render 'shared/footer_index_active' %>
