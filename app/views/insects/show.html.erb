@@ -1,29 +1,31 @@
 <div class="wrapper-content-page">
-  <!--  <div class="insectified"> -->
-  <div class="container-content-page">
-    <div style="text-align:center;" class="insect-container">
-      <%= image_tag("ladybug.jpg",height: 435, width: 260, :class => "photo") %>
-      <div style="text-align:left" class="name">
-        <p>name:<br>
-          <%= @insect.name %><br>
-          family:<br>
-          <%= @insect.family %><br>
-          rarity:<br>
-          <%= @insect.rarity %><br>
-          location:<br>
-          <%= @insect.location %>
-        </p>
-      </div>
-      <div style="text-align:left" class="description">
-        <p>
-          <%= @insect.description %>
-        </p>
-      </div>
-      <div class="add-btn">
-        <div class="btn-main">
-          <div class="btn-main-wrapper"></div>
-          <div class="btn-main-white-top"></div>
-          <h3>Add to Collection</h3>
+  <div class="insectified">
+    <h1>insectified!</h1>
+    <div class="container-content-page">
+      <div style="text-align:center;" class="insect-container">
+        <%= image_tag("ladybug.jpg", :class => "photo") %>
+        <div style="text-align:left" class="name">
+          <p>name:<br>
+            <%= @insect.name %><br>
+            family:<br>
+            <%= @insect.family %><br>
+            rarity:<br>
+            <%= @insect.rarity %><br>
+            location:<br>
+            <%= @insect.location %>
+          </p>
+        </div>
+        <div style="text-align:left" class="description">
+          <p>
+            <%= @insect.description %>
+          </p>
+        </div>
+        <div class="add-btn">
+          <div class="btn-main">
+            <div class="btn-main-wrapper"></div>
+            <div class="btn-main-white-top"></div>
+            <h3>Add to Collection</h3>
+          </div>
         </div>
       </div>
     </div>
