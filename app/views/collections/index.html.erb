@@ -1,8 +1,10 @@
+<% content_for :title do %>
+  Insectifier
+<% end %>
 <div class="wrapper-content-page">
   <div class="container">
     <% if @collection.present? %>
       <div class="insect-collection">
-        <h2>Collection</h2>
         <div class="insect-number">
           <p>
             <%= "# #{ pluralize @collection.size, "Insect" }" %>
@@ -31,3 +33,4 @@
     <% end %>
   </div>
 </div>
+<%= render 'shared/footer_collection_active' %>
