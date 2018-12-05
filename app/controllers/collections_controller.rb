@@ -9,10 +9,12 @@ class CollectionsController < ApplicationController
 
   def create
     @collection = Collection.new(collection_params)
-    @collection.user = User.find(params[:user_id])
-    @collection.save
+    @collection.user = current_user
+    @collection.insect = Insect.find_by_name("ladybug")
+    # @collection.user = User.find(params[current_user])
+    @collection.save!
     if @collection.save
-      redirect_to collecton_path(params[:user_id])
+      redirect_to insect_path(@collection.insect)
     else
       render :new
     end

@@ -6,11 +6,19 @@
     <%= image_tag "component.png" %>
   </div>
   <div class="container-main-page">
-    <div class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <h3>Upload</h3>
-    </div>
+    <%= simple_form_for @collection do |f| %>
+      <label>
+        <div class="btn-main">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Upload</h3>
+        </div>
+        <span style="display:none;">
+          <%= f.input :picture, required: true, id: "file", :input_html => { onchange: "this.form.submit()" } %>
+          <%= f.input :picture_cache, as: :hidden %>
+        </span>
+      </label>
+    <% end %>
   </div>
 </div>
 <%= render 'shared/footer_index_active' %>
