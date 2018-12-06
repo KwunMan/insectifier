@@ -20,6 +20,8 @@ gem 'webpacker'
 ########## TEST API
 gem 'oauth2'
 gem 'google-cloud-vision'
+gem 'selenium-webdriver'
+gem 'nokogiri'
 ###########
 
 gem 'cloudinary', '~> 1.9.1'
