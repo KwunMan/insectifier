@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_020523) do
+ActiveRecord::Schema.define(version: 2018_12_06_081418) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "achievement_collections", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "challenge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_achievement_collections_on_challenge_id"
+    t.index ["user_id"], name: "index_achievement_collections_on_user_id"
+  end
 
   create_table "achievements", force: :cascade do |t|
     t.string "title"
@@ -23,6 +32,16 @@ ActiveRecord::Schema.define(version: 2018_12_06_020523) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_achievements_on_user_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.integer "score"
+    t.string "poster"
+    t.string "description"
+    t.bigint "insect_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["insect_id"], name: "index_challenges_on_insect_id"
   end
 
   create_table "collections", force: :cascade do |t|
@@ -64,7 +83,10 @@ ActiveRecord::Schema.define(version: 2018_12_06_020523) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "achievement_collections", "challenges"
+  add_foreign_key "achievement_collections", "users"
   add_foreign_key "achievements", "users"
+  add_foreign_key "challenges", "insects"
   add_foreign_key "collections", "insects"
   add_foreign_key "collections", "users"
 end
