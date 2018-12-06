@@ -5,6 +5,14 @@
   // justify-content: center;
 }
 
+.collection {
+  height: 300px;
+}
+
+.insectify {
+  height: 230px;
+}
+
 .name {
   background-color: black;
   color: white;
@@ -12,6 +20,8 @@
   border-radius: 10px;
   margin-left: 3%;
   padding: 1%;
+  width: 200px;
+    overflow:auto;
   ul {
     list-style-type: none;
     text-align: left;
@@ -21,6 +31,8 @@
     }
   }
 }
+
+
 .image {
   width: 50%;
 }
