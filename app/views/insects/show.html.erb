@@ -7,20 +7,14 @@ Insectified!
       <div class="image">
         <%= cl_image_tag @collection.picture, width: 190, height: 230, crop: :fill, class: "photo" %>
       </div>
-      <div class="name">
+      <div class="insectify name">
         <ul>
-          <li>name:
-            <%= @insect.name %>
-          </li>
-          <li>family:
-            <%= @insect.family %>
-          </li>
-          <li>rarity:
-            <%= @insect.kingdom %>
-          </li>
-          <li>location:
-            <%= @insect.class_insect %>
-          </li>
+          <li><b>Name:</b> <%= @insect.name %> (No. <%= @collection.insect.id %>) </li>
+          <li><b>Scientific Name:</b> <%= @insect.scientific_name %> </li>
+          <li><b>Kingdom:</b> <%= @insect.kingdom %></li>
+          <li><b>Class:</b> <%= @insect.class_insect %></li>
+          <li><b>Order:</b> <%= @insect.order %></li>
+          <li><b>Family:</b> <%= @insect.family %></li>
         </ul>
       </div>
     </div>
@@ -31,30 +25,30 @@ Insectified!
     </div>
   </div>
   </ul>
-  <!--     <button class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <%#= link_to "Add to Collection", collections_path%>
-    </button> -->
+
 </div>
-<div class="container-main-page">
-  <ul class="list-inline">
-    <li>
+
+<%= simple_form_for @collection do |f| %>
+  <%= f.hidden_field :picture, :value => @collection.picture %>
+  <%= f.hidden_field :insect_id, :value => @insect.id %>
+  <div class="container-main-page">
+    <ul class="list-inline">
+          <li>
       <button class="btn-main-red">
         <div class="btn-main-wrapper-red"></div>
-        <div class="btn-main-white-top"></div>
+                <div class="btn-main-white-top"></div>
         <h3><%= link_to "Cancel", root_path%></h3>
       </button>
     </li>
-    <li>
-      <div class="button-add">
-        <%= simple_form_for @collection do |f| %>
-        <%= f.hidden_field :picture, :value => @collection.picture %>
-        <%= f.hidden_field :insect_id, :value => @insect.id %>
-        <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
+      <li>
+        <button class="btn-main" acton="submit">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Add Insect</h3>
         <% end %>
-      </div>
+      </button>
     </li>
+
   </ul>
 </div>
 <%= render 'shared/footer_collection_active' %>
