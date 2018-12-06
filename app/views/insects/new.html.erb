@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Insectifier
+Insectifier
 <% end %>
 <div class="wrapper">
   <div class="home-logo">
@@ -7,17 +7,17 @@
   </div>
   <div class="container-main-page">
     <%= simple_form_for @insect do |f| %>
-      <label>
-        <div class="btn-main">
-          <div class="btn-main-wrapper"></div>
-          <div class="btn-main-white-top"></div>
-          <h3>Upload</h3>
-        </div>
-        <span style="display:none;">
+    <label>
+      <div class="btn-main">
+        <div class="btn-main-wrapper"></div>
+        <div class="btn-main-white-top"></div>
+        <h3>Insectify</h3>
+      </div>
+      <span style="display:none;">
           <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "this.form.submit()" } %>
           <%= f.input :photo_cache, as: :hidden %>
         </span>
-      </label>
+    </label>
     <% end %>
   </div>
 </div>
