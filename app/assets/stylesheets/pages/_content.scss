@@ -5,6 +5,14 @@
   // justify-content: center;
 }
 
+.collection {
+  height: 300px;
+}
+
+.insectify {
+  height: 230px;
+}
+
 .name {
   background-color: black;
   color: white;
@@ -12,6 +20,8 @@
   border-radius: 10px;
   margin-left: 3%;
   padding: 1%;
+  // width: 200px;
+    overflow:auto;
   ul {
     list-style-type: none;
     text-align: left;
@@ -21,8 +31,12 @@
     }
   }
 }
+
+
 .image {
-  width: 50%;
+  // width: 50%;
+  display: flex;
+  flex: 1 1 50%;
 }
 
 .top-inline {
@@ -38,25 +52,27 @@
   color: white;
   font-size: 17px;
   border-radius: 10px;
-  height: 195px;
   overflow: auto;
   margin-top:3%;
   margin-left:4%;
   margin-right:4%;
   margin-bottom:2%;
+  padding: 2%;
+  height: calc(50vh - 180px);
 }
 
-.description p {
-  padding-left: 10px;
+// .description p {
+//   padding-left: 10px;
 
-  @media screen and (min-width: 600px) {
-    width: 700px;
-  }
-}
+//   // @media screen and (min-width: 600px) {
+//   //   width: 700px;
+//   // }
+// }
 
 .photo {
   // width: 100%;
   border-radius: 10px;
+  // flex: 1 1 50%;
 }
 
 // .description p {
@@ -74,21 +90,6 @@
   }
 }
 
-.insect-container {
-  // margin-bottom: 70px;
-  // margin-top: 30px;
-}
-
-.button-add {
-  margin-left: 15px;
-  margin-right: 15px;
-  margin-bottom: -30px;
-}
-
-.button.btn.magnify.btn-lg.btn-block {
-  height: 70px;
-}
-
 .row-1 {
   height: 100px;
 }
@@ -99,12 +100,6 @@ footer {
   width: 100%;
   height: 100px;
 }
-
-// .description {
-//   color: white;
-//   background-color: black;
-//   height: 160px;
-// }
 
 div.name li {
   margin-left: -37px;
