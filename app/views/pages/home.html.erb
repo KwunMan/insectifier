@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Something
+Something
 <% end %>
 <div class="wrapper-main-page">
   <div class="home-logo">
@@ -14,7 +14,7 @@
   </div>
 </div>
 <% content_for :home do %>
-  <%= render 'shared/footer' do %>
-    <%= yield :index %>
-  <% end %>
+<%= render 'shared/footer' do %>
+<%= yield :index %>
+<% end %>
 <% end %>
