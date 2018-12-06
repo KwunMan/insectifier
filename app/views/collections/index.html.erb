@@ -3,25 +3,25 @@ Collection
 <% end %>
 <div class="wrapper-content-page">
   <div class="container">
-    <% if @collection.present? %>
+    <% if @collections.present? %>
     <div class="insect-collection">
       <div class="insect-number">
         <p>
-          <%= "# #{ pluralize @collection.size, "Insect" }" %>
+          <%= "# #{ pluralize @collections.size, "Insect" }" %>
         </p>
       </div>
     </div>
     <div class="row-card">
       <div class="cards">
-        <% @collection.each do |insect| %>
+        <% @collections.each do |collection| %>
         <div class="col-xs-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('#');">
-            <%= link_to "", insect_path(insect), class: 'card-link' %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
+            <%= link_to "", collection_path(collection), class: 'card-link' %>
             <div class="card-rare">
-              <%= insect.rarity %>
+              <%= collection.insect.rarity %>
             </div>
             <div class="card-name">
-              <h2><%= insect.name %></h2>
+              <h2><%= collection.insect.name %></h2>
             </div>
           </div>
         </div>

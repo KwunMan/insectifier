@@ -10,16 +10,16 @@ Insectifier
         <div class="name">
           <ul>
             <li>name:<br>
-              <%= @insect.name %>
+              <%= @collection.insect.name %>
             </li>
             <li>family:<br>
-              <%= @insect.family %>
+              <%= @collection.insect.family %>
             </li>
             <li>rarity:<br>
-              <%= @insect.kingdom %>
+              <%= @collection.insect.kingdom %>
             </li>
             <li>location:<br>
-              <%= @insect.class_insect %>
+              <%= @collection.insect.class_insect %>
             </li>
           </ul>
         </div>
@@ -29,15 +29,11 @@ Insectifier
       <div class="col-xs-12">
         <div style="text-align:left" class="description">
           <p>
-            <%= @insect.description %>
+            <%= @collection.insect.description %>
           </p>
         </div>
       </div>
     </div>
-    <div class="button-add">
-      <%= simple_form_for @collection do |f| %>
-      <%= f.hidden_field :picture, :value => @collection.picture %>
-      <%= f.hidden_field :insect_id, :value => @insect.id %>
-      <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
-      <% end %>
-    </div>
+  </div>
+</div>
+<%= render 'shared/footer_collection_active' %>
