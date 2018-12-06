@@ -1,12 +1,12 @@
 <% content_for :title do %>
-  Insectifier
+Insectifier
 <% end %>
 <div class="wrapper-content-page">
   <div class="insectified">
     <h1>insectified!</h1>
     <div class="container-content-page">
       <div style="text-align:center;" class="insect-container">
-        <%= image_tag("ladybug.jpg",height: 305, width: 200,:class => "photo") %>
+        <%= cl_image_tag @collection.picture, height: 305, width: 200, :class => "photo" %>
         <div class="name">
           <ul>
             <li>name:<br>
@@ -16,10 +16,10 @@
               <%= @insect.family %>
             </li>
             <li>rarity:<br>
-              <%= @insect.rarity %>
+              <%= @insect.kingdom %>
             </li>
             <li>location:<br>
-              <%= @insect.location %>
+              <%= @insect.class_insect %>
             </li>
           </ul>
         </div>
