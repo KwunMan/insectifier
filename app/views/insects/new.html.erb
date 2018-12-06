@@ -1,7 +1,7 @@
 <% content_for :title do %>
 Insectifier
 <% end %>
-<div class="wrapper-main-page">
+<div class="wrapper">
   <div class="home-logo">
     <%= image_tag "component.png" %>
   </div>
@@ -11,7 +11,7 @@ Insectifier
       <div class="btn-main">
         <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>
-        <h3>Upload</h3>
+        <h3>Insectify</h3>
       </div>
       <span style="display:none;">
           <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "this.form.submit()" } %>
