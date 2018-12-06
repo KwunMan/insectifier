@@ -1,33 +1,36 @@
-.wrapper-content-page {
-  height: 100vh;
-  text-align: center;
-}
-
 .container-content-page {
-  height: 970px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // margin: 0 auto;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
 }
 
 .name {
   background-color: black;
   color: white;
-  font-size: 17px;
-  word-break: keep-all;
+  font-size: 16px;
   border-radius: 10px;
-  margin-left: -10px;
-
+  margin-left: 3%;
+  padding: 1%;
   ul {
     list-style-type: none;
     text-align: left;
-
     li {
       margin-left: -37px;
       padding-bottom: 5px;
     }
   }
+}
+.image {
+  width: 50%;
+}
+
+.top-inline {
+  display: flex;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 1%;
+
 }
 
 .description {
@@ -35,8 +38,12 @@
   color: white;
   font-size: 17px;
   border-radius: 10px;
-  height: 170px;
-  margin-bottom: 20px;
+  height: 195px;
+  overflow: auto;
+  margin-top:3%;
+  margin-left:4%;
+  margin-right:4%;
+  margin-bottom:2%;
 }
 
 .description p {
@@ -48,7 +55,7 @@
 }
 
 .photo {
-  width: 100%;
+  // width: 100%;
   border-radius: 10px;
 }
 
@@ -68,8 +75,8 @@
 }
 
 .insect-container {
-  margin-bottom: 70px;
-  margin-top: 30px;
+  // margin-bottom: 70px;
+  // margin-top: 30px;
 }
 
 .button-add {

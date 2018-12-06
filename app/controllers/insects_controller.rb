@@ -17,7 +17,6 @@ class InsectsController < ApplicationController
   def create
     @collection = Collection.new
     @collection.picture = insect_params[:photo]
-
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
     driver = Selenium::WebDriver.for :chrome, options: options
