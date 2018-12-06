@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Insectified!
+Insectified!
 <% end %>
 <div class="wrapper">
   <div class="container-content-page">
@@ -9,10 +9,18 @@
       </div>
       <div class="name">
         <ul>
-          <li>name: <%= @insect.name %></li>
-          <li>family: <%= @insect.family %></li>
-          <li>rarity: <%= @insect.kingdom %></li>
-          <li>location: <%= @insect.class_insect %></li>
+          <li>name:
+            <%= @insect.name %>
+          </li>
+          <li>family:
+            <%= @insect.family %>
+          </li>
+          <li>rarity:
+            <%= @insect.kingdom %>
+          </li>
+          <li>location:
+            <%= @insect.class_insect %>
+          </li>
         </ul>
       </div>
     </div>
@@ -22,8 +30,8 @@
       </p>
     </div>
   </div>
-</ul>
-<!--     <button class="btn-main">
+  </ul>
+  <!--     <button class="btn-main">
       <div class="btn-main-wrapper"></div>
       <div class="btn-main-white-top"></div>
       <%#= link_to "Add to Collection", collections_path%>
@@ -32,20 +40,20 @@
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-     <div class="button-add">
-      <%= simple_form_for @collection do |f| %>
-      <%= f.hidden_field :picture, :value => @collection.picture %>
-      <%= f.hidden_field :insect_id, :value => @insect.id %>
-      <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
-      <% end %>
-    </div>
+      <button class="btn-main-red">
+        <div class="btn-main-wrapper-red"></div>
+        <div class="btn-main-white-top"></div>
+        <h3><%= link_to "Cancel", root_path%></h3>
+      </button>
     </li>
     <li>
-      <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", collections_path%></h3>
-      </button>
+      <div class="button-add">
+        <%= simple_form_for @collection do |f| %>
+        <%= f.hidden_field :picture, :value => @collection.picture %>
+        <%= f.hidden_field :insect_id, :value => @insect.id %>
+        <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
+        <% end %>
+      </div>
     </li>
   </ul>
 </div>
