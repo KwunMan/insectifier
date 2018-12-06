@@ -23,20 +23,26 @@ Insectifier
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="col-xs-12">
         <div style="text-align:left" class="description">
           <p>
             <%= @insect.description %>
           </p>
         </div>
-        <div class="add-btn">
-          <div class="btn-main">
-            <div class="btn-main-wrapper"></div>
-            <div class="btn-main-white-top"></div>
-            <h3>Add to Collection</h3>
-          </div>
-        </div>
       </div>
     </div>
+    <div class="button-add">
+      <button type="button" class="btn magnify btn-lg btn-block">
+        <%= link_to "Add to Collection", collections_path%></button>
+    </div>
+    <!-- <button class="btn-main">
+      <div class="btn-main-wrapper"></div>
+      <div class="btn-main-white-top"></div>
+      <%= link_to "Add to Collection", collections_path%>
   </div>
 </div>
-<%= render 'shared/footer_collection_active' %>
+    <%= render 'shared/footer_collection_active' %>
+  </div>
