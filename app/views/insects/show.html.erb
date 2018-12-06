@@ -35,14 +35,9 @@ Insectifier
       </div>
     </div>
     <div class="button-add">
-      <button type="button" class="btn magnify btn-lg btn-block">
-        <%= link_to "Add to Collection", collections_path%></button>
+      <%= simple_form_for @collection do |f| %>
+      <%= f.hidden_field :picture, :value => @collection.picture %>
+      <%= f.hidden_field :insect_id, :value => @insect.id %>
+      <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
+      <% end %>
     </div>
-    <!-- <button class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <%= link_to "Add to Collection", collections_path%>
-  </div>
-</div>
-    <%= render 'shared/footer_collection_active' %>
-  </div>

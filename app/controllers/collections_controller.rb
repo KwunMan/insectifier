@@ -1,28 +1,28 @@
 class CollectionsController < ApplicationController
   def index
-    @collection = current_user.insects
+    @collections = Collection.where(user_id: current_user)
+  end
+
+  def show
+    @collection = Collection.find(params[:id])
   end
 
   def new
     @collection = Collection.new
   end
 
-  def create
-    @collection = Collection.new(collection_params)
+  def update
+    @collection = Collection.find(params[:id])
+    @collection.update(collection_params)
     @collection.user = current_user
-    @collection.insect = Insect.find_by_name("ladybug")
-    # @collection.user = User.find(params[current_user])
-    @collection.save!
-    if @collection.save
-      redirect_to insect_path(@collection.insect)
-    else
-      render :new
-    end
+    @collection.save
+    redirect_to collections_path
   end
 
   private
+
   def collection_params
-    params.require(:collection).permit(:picture)
+    params.require(:collection).permit(:picture, :insect_id)
   end
 
 end
