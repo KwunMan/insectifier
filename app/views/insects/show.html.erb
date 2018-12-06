@@ -1,9 +1,15 @@
-<div class="wrapper-content-page">
-  <div class="insectified">
-    <h1>insectified!</h1>
-    <div class="container-content-page">
-      <div style="text-align:center;" class="insect-container">
-        <%= image_tag("ladybug.jpg",height: 305, width: 200,:class => "photo") %>
+<% content_for :title do %>
+Insectified!
+<% end %>
+<div class="insect-main-page">
+  <div class="insect-container">
+    <div class="row-1">
+      <div class="col-xs-7">
+        <div class="image">
+          <%= image_tag("ladybug.jpg",:class => "photo") %>
+        </div>
+      </div>
+      <div class="col-xs-5">
         <div class="name">
           <ul>
             <li>name:<br>
@@ -20,21 +26,27 @@
             </li>
           </ul>
         </div>
+      </div>
+    </div>
+    <div class="row-2">
+      <div class="col-xs-12">
         <div style="text-align:left" class="description">
           <p>
             <%= @insect.description %>
           </p>
         </div>
-        <div class="add-btn">
-          <div class="btn-main">
-            <div class="btn-main-wrapper"></div>
-            <div class="btn-main-white-top"></div>
-            <h3>Add to Collection</h3>
-          </div>
-        </div>
       </div>
     </div>
+    <div class="button-add">
+      <button type="button" class="btn magnify btn-lg btn-block">
+        <%= link_to "Add to Collection", collections_path%></button>
+    </div>
+    <!-- <button class="btn-main">
+      <div class="btn-main-wrapper"></div>
+      <div class="btn-main-white-top"></div>
+      <%= link_to "Add to Collection", collections_path%>
   </div>
 </div>
-<!-- </div> -->
-<%= render 'shared/footer_collection_active' %>
+</div> -->
+    <%= render 'shared/footer_collection_active' %>
+  </div>

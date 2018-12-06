@@ -7,6 +7,11 @@
   color: white;
   position: relative;
   border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.cards {
+  margin-left: -22px;
 }
 
 .card-rare {
@@ -24,15 +29,7 @@
 }
 
 .card-name h2 {
-  font-size: 24px;
-}
-
-.card-time {
-  font-size: 7px;
-  font-weight: lighter;
-  position: absolute;
-  top: -25px;
-  left: 5px;
+  font-size: 20px;
 }
 
 .card-link {
@@ -52,13 +49,6 @@
 
 .row-card {
   margin-right: 2px;
-}
-
-div.col-xs-3 {
-  padding-left: 5px;
-  padding-bottom: 5px;
-  margin-top: 30px;
-  margin-bottom: -25px;
 }
 
 .insect-number {
