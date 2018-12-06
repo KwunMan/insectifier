@@ -32,11 +32,13 @@
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-      <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Add to Collection", collections_path%></h3>
-      </button>
+     <div class="button-add">
+      <%= simple_form_for @collection do |f| %>
+      <%= f.hidden_field :picture, :value => @collection.picture %>
+      <%= f.hidden_field :insect_id, :value => @insect.id %>
+      <%= f.submit "Add to collection", class: "btn magnify btn-lg btn-block" %>
+      <% end %>
+    </div>
     </li>
     <li>
       <button class="btn-main">
