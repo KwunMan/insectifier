@@ -13,6 +13,21 @@
 
 }
 
+.btn-main-red {
+  background-color: #db2f08;
+  min-width: 150px;
+  min-height: 80px;
+  margin: 0px 5px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border: 1px solid black;
+  box-shadow: 3px 5px rgba(0, 0, 0, 0.5);
+
+}
+
 
 .btn-main:active {
   box-shadow: 1px 2px rgba(0, 0, 0, 0.5);
@@ -25,6 +40,20 @@
   border-radius: 4px;
 
   background-color: $yellow;
+  opacity: 0.8;
+  position: absolute;
+  // top: 4px;
+  // left: 4px;
+
+
+}
+
+.btn-main-wrapper-red {
+  min-height: 75px;
+  min-width: 95%;
+  border-radius: 4px;
+
+  background-color: #F93708;
   opacity: 0.8;
   position: absolute;
   // top: 4px;
@@ -46,7 +75,8 @@
   // left: 4px;
 }
 
-.btn-main h3, .btn-main a  {
+.btn-main h3,
+.btn-main a {
   z-index: 1;
   font-weight: bold;
   color: white;
@@ -59,4 +89,22 @@
     0 1px 0 #000,
     -1px 1px 0 #000,
     -1px 0 0 #000;
+}
+
+.btn-main-red h3,
+.btn-main-red a {
+  text-decoration: none;
+  z-index: 1;
+  font-weight: bold;
+  color: white;
+  text-shadow:
+    -1px -1px 0 #000,
+    0 -1px 0 #000,
+    1px -1px 0 #000,
+    1px 0 0 #000,
+    1px 1px 0 #000,
+    0 1px 0 #000,
+    -1px 1px 0 #000,
+    -1px 0 0 #000;
+
 }

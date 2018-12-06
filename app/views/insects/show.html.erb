@@ -1,5 +1,5 @@
 <% content_for :title do %>
-  Insectified!
+Insectified!
 <% end %>
 <div class="wrapper">
   <div class="container-content-page">
@@ -24,18 +24,22 @@
       </p>
     </div>
   </div>
-</ul>
-<!--     <button class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <%#= link_to "Add to Collection", collections_path%>
-    </button> -->
+  </ul>
+
 </div>
+
 <%= simple_form_for @collection do |f| %>
   <%= f.hidden_field :picture, :value => @collection.picture %>
   <%= f.hidden_field :insect_id, :value => @insect.id %>
   <div class="container-main-page">
     <ul class="list-inline">
+          <li>
+      <button class="btn-main-red">
+        <div class="btn-main-wrapper-red"></div>
+                <div class="btn-main-white-top"></div>
+        <h3><%= link_to "Cancel", root_path%></h3>
+      </button>
+    </li>
       <li>
         <button class="btn-main" acton="submit">
           <div class="btn-main-wrapper"></div>
@@ -44,13 +48,7 @@
         <% end %>
       </button>
     </li>
-    <li>
-      <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", collections_path%></h3>
-      </button>
-    </li>
+
   </ul>
 </div>
 <%= render 'shared/footer_collection_active' %>
