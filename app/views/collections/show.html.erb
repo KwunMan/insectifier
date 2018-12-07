@@ -1,39 +1,34 @@
+
 <% content_for :title do %>
-Insectifier
+  Insect #<%= @collection.insect.id %>
 <% end %>
-<div class="wrapper-content-page">
-  <div class="insectified">
-    <h1>insectified!</h1>
-    <div class="container-content-page">
-      <div style="text-align:center;" class="insect-container">
-        <%= cl_image_tag @collection.picture, height: 305, width: 200, :class => "photo" %>
-        <div class="name">
-          <ul>
-            <li>name:<br>
-              <%= @collection.insect.name %>
-            </li>
-            <li>family:<br>
-              <%= @collection.insect.family %>
-            </li>
-            <li>rarity:<br>
-              <%= @collection.insect.kingdom %>
-            </li>
-            <li>location:<br>
-              <%= @collection.insect.class_insect %>
-            </li>
-          </ul>
-        </div>
+<div class="wrapper">
+  <div class="container-content-page">
+    <div class="top-inline" style="text-align:center">
+      <div class="image">
+        <%= cl_image_tag @collection.picture, width: 190, height: 300, crop: :fill, class: "photo" %>
+      </div>
+      <div class="collection name">
+        <ul>
+          <li><b>Name:</b> <%= @collection.insect.name %> </li>
+          <li><b>Scientific Name:</b> <%= @collection.insect.scientific_name %> </li>
+          <li><b>Kingdom:</b> <%= @collection.insect.kingdom %></li>
+          <li><b>Class:</b> <%= @collection.insect.class_insect %></li>
+          <li><b>Order:</b> <%= @collection.insect.order %></li>
+          <li><b>Family:</b> <%= @collection.insect.family %></li>
+        </ul>
       </div>
     </div>
-    <div class="row-2">
-      <div class="col-xs-12">
-        <div style="text-align:left" class="description">
-          <p>
-            <%= @collection.insect.description %>
-          </p>
-        </div>
-      </div>
+    <div style="text-align:left" class="description">
+      <p>
+        <%= @collection.insect.description %>
+      </p>
     </div>
   </div>
+  <!--     <button class="btn-main">
+      <div class="btn-main-wrapper"></div>
+      <div class="btn-main-white-top"></div>
+      <%#= link_to "Add to Collection", collections_path%>
+    </button> -->
 </div>
 <%= render 'shared/footer_collection_active' %>
