@@ -11,7 +11,7 @@ Insect.destroy_all
 
 insects_array = %w[ladybug spider ant moth beetle]
 rare_array = %w[Everywhere common uncommon rare Almost-mythical]
-challenge_array = ["Beetle.png","Ant.png"]
+challenge_array = ["Beetle.png","Ant.png","Dragonfly.png"]
 
 puts "creating insect"
 5.times do
