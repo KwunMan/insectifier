@@ -1,9 +1,9 @@
 <% content_for :title do %>
-Something
+  Something
 <% end %>
 <div class="wrapper-main-page">
   <div class="home-logo">
-    <%= image_tag "component.png" %>
+    <%= image_tag ("component.png", size: "200x200") %>
   </div>
   <div class="container-main-page">
     <div class="btn-main">
@@ -14,7 +14,7 @@ Something
   </div>
 </div>
 <% content_for :home do %>
-<%= render 'shared/footer' do %>
-<%= yield :index %>
-<% end %>
+  <%= render 'shared/footer' do %>
+    <%= yield :index %>
+  <% end %>
 <% end %>
