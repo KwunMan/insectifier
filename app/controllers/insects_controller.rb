@@ -24,7 +24,13 @@ class InsectsController < ApplicationController
     file = @collection.picture.file.file
     button = driver.find_element(:xpath => "//*[@id='app']/div/div/input")
     button.send_key file
-    classify = driver.find_element(:class => "classify")
+
+    classify = nil
+    until classify.present?
+      sleep 0.2
+      classify = driver.find_element(:class => "classify")
+    end
+
     sleep(2)
     classify.click
     sleep(3)
