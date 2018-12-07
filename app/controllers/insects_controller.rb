@@ -66,6 +66,7 @@ class InsectsController < ApplicationController
     end
     @collection.insect = @insect
     @collection.save!
+    driver.quit
 
     redirect_to insect_path(@insect, collection_id: @collection.id)
   end
