@@ -21,7 +21,7 @@
 
 .tab {
   background: $green;
-  flex: 1 1 50%;
+  flex: 1 1 34%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -37,7 +37,7 @@ a.tab:hover {
 .tab.active {
   background: #63c687;
   color: white;
-  flex: 0 0 60%;
+  flex: 0 0 40%;
   border-left: none;
   // border-right: 1px solid black;
 }

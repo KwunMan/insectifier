@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class InsectsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:new, :show, :create]
   def new
     @insect = Insect.new
     # @collection = Collection.new
@@ -40,6 +40,9 @@ class InsectsController < ApplicationController
     html_file = open(url).read
     html_doc = Nokogiri::HTML(html_file)
     puts description = html_doc.xpath('//*[@id="mw-content-text"]/div/p[2]').text
+    danger_array = ['venom', 'pois', 'dang', 'bit', 'sting', 'widow', 'wasp', 'bee', 'bullet ant' ,'tarantula hawk', 'bull ant', 'yellowjacket' ,'harvester ant', 'butterfly']
+    dangerous = false
+    dangerous = true if danger_array.any? { |danger| description.include? danger }
     text = html_doc.search('.infobox.biota').text.split(' ')
     classification_hash = {}
 
@@ -62,10 +65,12 @@ class InsectsController < ApplicationController
       @insect.class_insect = classification_hash['Class']
       @insect.order = classification_hash['Order']
       @insect.family = classification_hash['Family']
+      @insect.dangerous = dangerous
       @insect.save!
     end
     @collection.insect = @insect
     @collection.save!
+    driver.quit
 
     redirect_to insect_path(@insect, collection_id: @collection.id)
   end

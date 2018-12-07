@@ -1,4 +1,5 @@
 class CollectionsController < ApplicationController
+
   def index
     @collections = Collection.where(user_id: current_user)
   end
@@ -17,6 +18,11 @@ class CollectionsController < ApplicationController
     @collection.user = current_user
     @collection.save
     redirect_to collections_path
+  end
+
+  ################ THIS IS JUST FOR SNEAK PEAK, WILL BE REMOVED AFTER AND PUT INSIDE
+  ################ CHALLENGE CONTROLLER
+  def challenge
   end
 
   private
