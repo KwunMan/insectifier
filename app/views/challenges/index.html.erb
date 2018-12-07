@@ -1,28 +1,19 @@
 <% content_for :title do %>
-Catch!
+Challenge
 <% end %>
-<div class="wrapper">
-  <div class="container-challenge-page">
-    <div class="challenge-image">
-      <%= image_tag "Beetle.png", :size =>'280x420' %>
+<div class="wrapper-content-page">
+  <div class="container">
+    <div class="insect-collection">
     </div>
-  </div>
-  <div class="challenge-description">
-    <p>
-      You'll get 10,000pt!
-    </p>
-  </div>
-</div>
-<div class="container-main-page">
-  <ul class="list-inline">
-    <li>
-      <button class="btn-main" acton="submit">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3>Hunting</h3>
-      </button>
-    </li>
-  </ul>
-</div>
-<%= render 'shared/footer_collection_active' %>
-</div>
+    <div class="row-card">
+      <div class="cards">
+        <div class="col-xs-3">
+          <% @challenges.each do |challenge| %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path challenge.poster%>');">
+            <%= link_to "", challenge_path(challenge), class: 'card-link' %>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%= render 'shared/footer_collection_active' %>
