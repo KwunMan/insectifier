@@ -3,7 +3,7 @@ require 'nokogiri'
 require 'open-uri'
 
 class InsectsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: [:new, :show, :create]
   def new
     @insect = Insect.new
     # @collection = Collection.new
