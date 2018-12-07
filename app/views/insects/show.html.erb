@@ -44,22 +44,21 @@ Insectified!
       </p>
     </div>
   </div>
-  </ul>
 </div>
-<%= simple_form_for @collection do |f| %>
-<%= f.hidden_field :picture, :value => @collection.picture %>
-<%= f.hidden_field :insect_id, :value => @insect.id %>
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
       <button class="btn-main-red">
         <div class="btn-main-wrapper-red"></div>
         <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", new_insect_path%></h3>
+        <h3><%= link_to "Cancel", root_path%></h3>
       </button>
     </li>
     <li>
-      <button class="btn-main" acton="submit">
+      <%= simple_form_for @collection do |f| %>
+      <%= f.hidden_field :picture, :value => @collection.picture %>
+      <%= f.hidden_field :insect_id, :value => @insect.id %>
+      <button class="btn-main">
         <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>
         <h3>Add Insect</h3>
