@@ -1,6 +1,6 @@
-
 <% content_for :title do %>
-  Insect #<%= @collection.insect.id %>
+Insect #
+<%= @collection.insect.id %>
 <% end %>
 <div class="wrapper">
   <div class="container-content-page">
@@ -10,12 +10,32 @@
       </div>
       <div class="collection name">
         <ul>
-          <li><b>Name:</b> <%= @collection.insect.name %> </li>
-          <li><b>Scientific Name:</b> <%= @collection.insect.scientific_name %> </li>
-          <li><b>Kingdom:</b> <%= @collection.insect.kingdom %></li>
-          <li><b>Class:</b> <%= @collection.insect.class_insect %></li>
-          <li><b>Order:</b> <%= @collection.insect.order %></li>
-          <li><b>Family:</b> <%= @collection.insect.family %></li>
+          <li><b>Name:</b>
+            <%= @collection.insect.name %>
+          </li>
+          <li><b>Scientific Name:</b>
+            <%= @collection.insect.scientific_name %>
+          </li>
+          <li><b>Kingdom:</b>
+            <%= @collection.insect.kingdom %>
+          </li>
+          <li><b>Class:</b>
+            <%= @collection.insect.class_insect %>
+          </li>
+          <li><b>Order:</b>
+            <%= @collection.insect.order %>
+          </li>
+          <li><b>Family:</b>
+            <%= @collection.insect.family %>
+          </li>
+          <% if @collection.insect.dangerous %>
+          <li><b>Dangerous?</b>
+            <span style="color: red; font-weight: bold;">Yes</span>
+          </li>
+          <%else %>
+          <li><b>Dangerous?</b>
+            <span style= "color: green; font-weight: bold;">No</span>
+            <%end %>
         </ul>
       </div>
     </div>
