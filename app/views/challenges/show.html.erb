@@ -1,0 +1,27 @@
+<% content_for :title do %>
+Catch!
+<% end %>
+<div class="wrapper">
+  <div class="container-challenge-page">
+    <div class="challenge-image">
+      <%= image_tag @challenge.poster, :size =>'280x420' %>
+    </div>
+  </div>
+  <div class="challenge-description">
+    <p>
+      Catch it to get 10,000pt!
+    </p>
+  </div>
+</div>
+<div class="container-main-page">
+  <ul class="list-inline">
+    <li>
+      <button class="btn-main" acton="submit">
+        <div class="btn-main-wrapper"></div>
+        <div class="btn-main-white-top"></div>
+        <h3>Hunting</h3>
+      </button>
+    </li>
+  </ul>
+</div>
+<%= render 'shared/footer_collection_active' %>
