@@ -1,0 +1,6 @@
+<%= form_tag collections_path, method: :get do %>
+  <%= text_field_tag :search,params[:search],class: "form-control form-inline",placeholder: "Search" %>
+  <button>
+    Find
+  </button>
+<% end %>

@@ -2,6 +2,13 @@ class CollectionsController < ApplicationController
 
   def index
     @collections = Collection.where(user_id: current_user)
+    if params[:search].present?
+      collections = @collections.select do |collection|
+        collection.insect.name.downcase.include?("#{params[:search]}")
+      end
+      @collections = collections
+      @collections = @collections.flatten
+    end
   end
 
   def show
