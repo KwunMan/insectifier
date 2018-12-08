@@ -4,7 +4,7 @@ class CollectionsController < ApplicationController
     @collections = Collection.where(user_id: current_user)
     if params[:search].present?
       collections = @collections.select do |collection|
-        collection.insect.name.downcase.include?("#{params[:search]}")
+        collection.insect.name.downcase.include?("#{params[:search]}".downcase)
       end
       @collections = collections
       @collections = @collections.flatten
