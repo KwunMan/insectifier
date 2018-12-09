@@ -6,10 +6,9 @@ Insectified!
     <%if @insect.dangerous %>
     <h2 style="color: red; font-weight:bold;font-size: 40px;">You have encountered a dangerous insect!</h2>
     <%else %>
-    <h2 style="color: green;">This insect is harmless</h1>
-      <% end %>
+    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless</h2>
+    <% end %>
     <div class="top-inline" style="text-align:center">
-
       <div class="image">
         <%= cl_image_tag @collection.picture, width: 190, height: 230, crop: :fill, class: "photo" %>
       </div>
@@ -21,7 +20,7 @@ Insectified!
           <li><b>Scientific Name:</b>
             <%= @insect.scientific_name %>
           </li>
-             <% if @insect.dangerous %>
+          <% if @insect.dangerous %>
           <li><b>Dangerous?</b>
             <span style="color: red; font-weight: bold;">Yes</span>
           </li>
@@ -29,8 +28,6 @@ Insectified!
           <li><b>Dangerous?</b>
             <span style= "color: green; font-weight: bold;">No</span>
             <%end %>
-
-
           <li><b>Kingdom:</b>
             <%= @insect.kingdom %>
           </li>
@@ -43,16 +40,13 @@ Insectified!
           <li><b>Family:</b>
             <%= @insect.family %>
           </li>
-
         </ul>
-
       </div>
     </div>
     <div style="text-align:left" class="description">
       <p>
         <%= @insect.description %>
       </p>
-
     </div>
   </div>
 </div>
