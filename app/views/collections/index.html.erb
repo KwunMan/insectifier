@@ -7,6 +7,8 @@
       <div class="insect-collection">
         <div class="insect-number">
           <p style="color:#ffffff;">
+            <!-- uncomment to call search bar below  -->
+            <%= render 'shared/search' %>
             <%= "# #{ pluralize @collections.size, "Insect" }" %>
           </p>
         </div>
