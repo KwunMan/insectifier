@@ -26,3 +26,16 @@
 .challenge-cards {
   margin-right: 5%;
 }
+
+.wrong-banner {
+  color: white;
+  text-align: center;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrong-content {
+  text-align: center
+}
