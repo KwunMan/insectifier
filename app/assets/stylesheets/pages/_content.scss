@@ -14,17 +14,19 @@
 }
 
 .name {
-  background-color: black;
+  background-color: $darkblue;
   color: white;
   font-size: 16px;
   border-radius: 10px;
   margin-left: 3%;
   padding: 1%;
   // width: 200px;
-    overflow:auto;
+  overflow: auto;
+
   ul {
     list-style-type: none;
     text-align: left;
+
     li {
       margin-left: -37px;
       padding-bottom: 5px;
@@ -48,15 +50,15 @@
 }
 
 .description {
-  background-color: black;
+  background-color: $darkblue;
   color: white;
   font-size: 17px;
   border-radius: 10px;
   overflow: auto;
-  margin-top:3%;
-  margin-left:4%;
-  margin-right:4%;
-  margin-bottom:2%;
+  margin-top: 3%;
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-bottom: 2%;
   padding: 2%;
   height: calc(50vh - 180px);
 }
