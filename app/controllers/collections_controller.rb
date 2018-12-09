@@ -9,6 +9,9 @@ class CollectionsController < ApplicationController
       @collections = collections
       @collections = @collections.flatten
     end
+
+
+
   end
 
   def show
