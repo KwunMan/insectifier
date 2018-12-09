@@ -36,33 +36,33 @@ class InsectsController < ApplicationController
     sleep(3)
     link = driver.find_element(:xpath => "//*[@id='app']/div/div/div/div[1]/div[2]/div[1]/div/div[2]/div[1]/span" )
     names = link.attribute("title").split('(')
-    puts common_name = names.first
+    common_name = names.first
     scientific_name = names.last.tr(')', '')
 
-    join_scientific_species = scientific_name.gsub(' ','_')
 
-    url = "https://en.wikipedia.org/wiki/#{join_scientific_species}"
-
-    html_file = open(url).read
-    html_doc = Nokogiri::HTML(html_file)
-    puts description = html_doc.xpath('//*[@id="mw-content-text"]/div/p[2]').text
-    danger_array = ['venom', 'pois', 'dang', 'bit', 'sting', 'widow', 'wasp', 'bee', 'bullet ant' ,'tarantula hawk', 'bull ant', 'yellowjacket' ,'harvester ant', 'butterfly']
-    dangerous = false
-    dangerous = true if danger_array.any? { |danger| description.include? danger }
-    text = html_doc.search('.infobox.biota').text.split(' ')
-    classification_hash = {}
-
-    class_array = ['Kingdom:', 'Class:', 'Order:', 'Family:']
-    text.each_with_index do |word, index|
-      if class_array.include?(word)
-        word = word.gsub(':','')
-
-        classification_hash[word] = text[index + 1]
-      end
-    end
-    puts classification_hash
-    @insect = Insect.find_by_name(scientific_name)
+    @insect = Insect.find_by(scientific_name: scientific_name)
     if @insect.nil?
+      join_scientific_species = scientific_name.gsub(' ','_')
+
+      url = "https://en.wikipedia.org/wiki/#{join_scientific_species}"
+
+      html_file = open(url).read
+      html_doc = Nokogiri::HTML(html_file)
+      description = html_doc.xpath('//*[@id="mw-content-text"]/div/p[2]').text
+      danger_array = ['venom', 'pois', 'dang', 'bit', 'sting', 'widow', 'wasp', 'bee', 'bullet ant' ,'tarantula hawk', 'bull ant', 'yellowjacket' ,'harvester ant', 'butterfly']
+      dangerous = false
+      dangerous = true if danger_array.any? { |danger| description.include? danger }
+      text = html_doc.search('.infobox.biota').text.split(' ')
+      classification_hash = {}
+
+      class_array = ['Kingdom:', 'Class:', 'Order:', 'Family:']
+      text.each_with_index do |word, index|
+        if class_array.include?(word)
+          word = word.gsub(':','')
+
+          classification_hash[word] = text[index + 1]
+        end
+      end
       @insect = Insect.new
       @insect.name = common_name
       @insect.description = description

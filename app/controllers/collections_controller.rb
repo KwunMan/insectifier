@@ -13,6 +13,8 @@ class CollectionsController < ApplicationController
 
   def show
     @collection = Collection.find(params[:id])
+    @encounters = current_user.collections.select {|collection| collection.insect.name == @collection.insect.name}.reverse
+
   end
 
   def new

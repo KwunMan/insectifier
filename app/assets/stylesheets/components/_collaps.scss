@@ -1,0 +1,131 @@
+.collapsible {
+  background-color: $lightblue;
+  color: $darkblue;
+  cursor: pointer;
+  padding: 18px;
+  width: 99%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 16px;
+
+
+}
+
+.active,
+.collapsible:hover {
+  background-color: #9abab5;
+}
+
+.collapsible:after {
+  content: '\002B';
+  color: $darkblue;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.content-collaps {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  border-radius-bottom: 10px;
+  color: #5809ea;
+
+  width: 99%;
+  transition: max-height 0.2s ease-out;
+  background-color: $lightblue;
+}
+
+
+.content-collaps-description {
+  padding: 0px 18px;
+  max-height: 0;
+  overflow: hidden;
+
+  color: white;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  text-align: left;
+
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 92%;
+  transition: max-height 0.2s ease-out;
+  background-color: $darkblue;
+
+  h3 {
+    padding-bottom: 5px;
+    border-bottom: 1px solid white;
+  }
+}
+
+.collapsible-description {
+  background-color: $darkblue;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+
+  border: none;
+  text-align: center;
+  outline: none;
+  font-size: 17px;
+
+  border-radius: 10px;
+  margin-top: 3%;
+  margin-left: 4%;
+  margin-right: 4%;
+
+  padding: 2%;
+  width: 92%;
+
+
+
+
+}
+
+.active-description,
+.collapsible-description:hover {
+  background-color: #2d1472;
+
+}
+
+.collapsible-description:after {
+  content: '\002B';
+  color: white;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+
+
+
+}
+
+.active:after {
+  content: "\2212";
+
+
+}
+
+.active-description:after {
+  content: "\2212";
+}
+
+.active-description,
+.content-collaps-description:after {
+  padding-bottom: 20px;
+}
+
+.active-description,
+.collapsible-description:after {
+
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+
+
+}
+
+.last-child {
+  margin-bottom: 60px;
+
+}
