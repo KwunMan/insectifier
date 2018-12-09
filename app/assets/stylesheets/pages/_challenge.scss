@@ -2,16 +2,18 @@
   background-color: black;
   color: white;
   height: 5%;
-  width: 72%;
+  width: 95%;
   margin-top: 1%;
   margin: 0 auto;
 }
 
-.container-challenge-page {}
+.container-challenge-page {
+  margin-bottom: 3%;
+}
 
 .challenge-card {
-  height: 130px;
-  width: 90px;
+  height: 120px;
+  width: 80px;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6);
   background-size: cover !important;
   background-position: center;
@@ -22,5 +24,5 @@
 }
 
 .challenge-cards {
-  margin-right: 30px;
+  margin-right: 5%;
 }

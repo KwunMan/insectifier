@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 2018_12_06_081418) do
   create_table "challenges", force: :cascade do |t|
     t.integer "score"
     t.string "poster"
-    t.string "description"
+    t.boolean "clear", default: false, null: false
     t.bigint "insect_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
