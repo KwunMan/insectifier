@@ -5,7 +5,6 @@ class CreateChallenges < ActiveRecord::Migration[5.2]
       t.string :poster
       t.string :family
       t.references :insect, foreign_key: true
-
       t.timestamps
     end
   end

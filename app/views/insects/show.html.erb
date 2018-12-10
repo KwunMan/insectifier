@@ -4,9 +4,9 @@ Insectified!
 <div class="wrapper">
   <div class="container-content-page">
     <%if @insect.dangerous %>
-    <h2 style="color: red; font-weight:bold;font-size: 40px;">You have encountered a dangerous insect!</h2>
+    <h2 style="color: red; font-weight:bold;font-size: 40px;">This insect is DANGEROUS!</h2>
     <%else %>
-    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless</h2>
+    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless!</h2>
     <% end %>
     <div class="top-inline" style="text-align:center">
       <div class="image">
@@ -15,8 +15,8 @@ Insectified!
       <div class="insectify name">
         <ul>
           <li><b>Name:</b>
-            <%= @insect.name %> (No.
-            <%= @collection.insect.id %>) </li>
+            <%= @insect.name %>
+          </li>
           <li><b>Scientific Name:</b>
             <%= @insect.scientific_name %>
           </li>
@@ -27,50 +27,70 @@ Insectified!
           <%else %>
           <li><b>Dangerous?</b>
             <span style= "color: green; font-weight: bold;">No</span>
-            <%end %>
-          <li><b>Kingdom:</b>
-            <%= @insect.kingdom %>
           </li>
-          <li><b>Class:</b>
-            <%= @insect.class_insect %>
-          </li>
-          <li><b>Order:</b>
-            <%= @insect.order %>
-          </li>
-          <li><b>Family:</b>
-            <%= @insect.family %>
+          <%end %>
+          <li>
+            <button class="collapsible">Taxonomy</button>
+            <div class="content-collaps">
+              <ul>
+                <li> <b>Kingdom: </b><br>
+                  >
+                  <%= @insect.kingdom %>
+                </li>
+                <li>
+                  <b>Class: </b> <br>
+                  >
+                  <%= @insect.class_insect %>
+                </li>
+                <li>
+                  <b>Order: </b> <br>
+                  >
+                  <%= @insect.order %>
+                </li>
+                <li>
+                  <b>Family: </b> <br>
+                  >
+                  <%= @insect.family %>
+                </li>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-    <div style="text-align:left" class="description">
+    <button class="collapsible-description"><b>Description</b></button>
+    <div class="content-collaps-description">
       <p>
-        <%= @insect.description %>
+        <%=  @insect.description%>
       </p>
     </div>
   </div>
-</div>
-<div class="container-main-page">
-  <ul class="list-inline">
-    <li>
-      <button class="btn-main-red">
-        <div class="btn-main-wrapper-red"></div>
-        <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", root_path%></h3>
-      </button>
-    </li>
-    <li>
-      <%= simple_form_for @collection do |f| %>
-      <%= f.hidden_field :picture, :value => @collection.picture %>
-      <%= f.hidden_field :insect_id, :value => @insect.id %>
-      <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3>Add to collection</h3>
-        <% end %>
-      </button>
-    </li>
-  </ul>
+  <center>
+    <br>
+    <ul class="list-inline">
+      <li>
+        <button class="btn-main-red">
+          <div class="btn-main-wrapper-red"></div>
+          <div class="btn-main-white-top"></div>
+          <h3><%= link_to "Cancel", root_path%></h3>
+        </button>
+      </li>
+      <li>
+        <%= simple_form_for @collection do |f| %>
+        <%= f.hidden_field :picture, :value => @collection.picture %>
+        <%= f.hidden_field :insect_id, :value => @insect.id %>
+        <button class="btn-main">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Add to collection</h3>
+          <% end %>
+        </button>
+      </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+  </center>
 </div>
 <%= render 'shared/footer_collection_active' %>
 </div>

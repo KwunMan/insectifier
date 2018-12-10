@@ -6,16 +6,21 @@ Collection
     <% if @collections.present? %>
     <div class="insect-collection">
       <div class="insect-number">
-        <p style="color:#ffffff;">
-          <!-- uncomment to call search bar below  -->
-          <%= render 'shared/search' %>
-          <%= "# #{ pluralize @collections.size, "Insect" }" %>
-        </p>
+        <div>
+          <p>
+            <%= "Total insects: # #{@collections.size}" %>
+          </p>
+          <p id="padding-last-child">
+            <%= "Unique insects: # #{ @unique_collections.size }" %>
+          </p>
+        </div>
+        <!-- uncomment to call search bar below  -->
+        <%= render 'shared/search' %>
       </div>
     </div>
     <div class="row-card">
       <div class="cards">
-        <% @collections.uniq.each do |collection| %>
+        <% @unique_collections.each do |collection| %>
         <div class="col-xs-3">
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
             <%= link_to "", collection_path(collection), class: 'card-link' %>
@@ -23,7 +28,7 @@ Collection
               <%= collection.insect.rarity %>
             </div>
             <div class="card-name">
-              <h2><%= collection.insect.name %></h2>
+              <h4><%= collection.insect.name %></h4>
             </div>
           </div>
         </div>
@@ -34,5 +39,7 @@ Collection
     <h2 class="text-center">You don't have any insects!</h2>
     <% end %>
   </div>
+  <br>
+  <br>
 </div>
 <%= render 'shared/footer_collection_active' %>

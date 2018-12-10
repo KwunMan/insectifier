@@ -3,6 +3,9 @@
   // display: flex;
   // align-items: center;
   // justify-content: center;
+  h2 {
+    margin-top:0;
+  }
 }
 
 .collection {
@@ -58,7 +61,7 @@
   margin-top: 3%;
   margin-left: 4%;
   margin-right: 4%;
-  margin-bottom: 2%;
+  margin-bottom: 4%;
   padding: 2%;
   height: calc(50vh - 180px);
 }
