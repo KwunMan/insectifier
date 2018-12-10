@@ -38,7 +38,6 @@ class InsectsController < ApplicationController
       classify.click
     end
 
-
     link = wait.until {
       driver.find_element(:xpath => "//*[@id='app']/div/div/div/div[1]/div[2]/div[1]/div/div[2]/div[1]/span" )
     }
