@@ -15,8 +15,8 @@ Insectified!
       <div class="insectify name">
         <ul>
           <li><b>Name:</b>
-            <%= @insect.name %> (No.
-            <%= @collection.insect.id %>) </li>
+            <%= @insect.name %>
+          </li>
           <li><b>Scientific Name:</b>
             <%= @insect.scientific_name %>
           </li>
@@ -53,7 +53,7 @@ Insectified!
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-      <button class="btn-main-red">
+      <button class="btn-main-red" id="location">
         <div class="btn-main-wrapper-red"></div>
         <div class="btn-main-white-top"></div>
         <h3><%= link_to "Cancel", root_path%></h3>
@@ -64,9 +64,9 @@ Insectified!
       <%= f.hidden_field :picture, :value => @collection.picture %>
       <%= f.hidden_field :insect_id, :value => @insect.id %>
       <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>
         <h3>Add to collection</h3>
+        <div class="btn-main-wrapper"></div>
         <% end %>
       </button>
     </li>

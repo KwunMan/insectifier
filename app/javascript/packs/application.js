@@ -1,5 +1,6 @@
 import "bootstrap";
 
+
 const coll = document.getElementsByClassName("collapsible");
 let i;
 
@@ -17,10 +18,9 @@ for (i = 0; i < coll.length; i++) {
 }
 
 const coll_description = document.getElementsByClassName("collapsible-description");
-let j = 0;
+let j;
 
 for (j = 0; j < coll_description.length; j++) {
-  console.log(coll_description[j])
   coll_description[j].addEventListener("click", function() {
     this.classList.toggle("active-description");
 
@@ -31,4 +31,5 @@ for (j = 0; j < coll_description.length; j++) {
       content.style.maxHeight = content.scrollHeight + 'px';
     }
   });
+
 }
