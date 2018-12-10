@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :insects, only: [:show, :create, :new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :collections, only: [:index, :create ,:update, :show]
-  resources :challenges, only: [:show, :index, :edit]
+  resources :challenges, only: [:show, :index]
+  patch '/challenges/:id', to: 'challenges#update', as: :challenge_update
 
 end

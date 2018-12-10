@@ -1,3 +1,17 @@
+<% if @challenge.done? %>
+<% content_for :title do %>
+Already hunted
+<% end %>
+<div class="wrapper">
+  <div class="container-challenge-page">
+    <div class="challenge-image">
+      <%= image_tag @challenge.poster, :size =>'280x420' %>
+      <%= image_tag("done.png", :class => "absolute-card", :size =>'250x250') %>
+    </div>
+  </div>
+</div>
+<%= render 'shared/footer_collection_active' %>
+<% else %>
 <% content_for :title do %>
 Catch!
 <% end %>
@@ -16,13 +30,11 @@ Catch!
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-      <button class="btn-main" acton="submit">
-        <div class="btn-main-wrapper"></div>
-        <div class="btn-main-white-top"></div>
-        <h3>Hunting</h3>
-        <%= link_to "", edit_challenge_path, class: 'card-link' %>
-      </button>
+      <%= simple_form_for @challenge do |f| %>
+      <%= f.button :submit, "Hunted!", :class => 'btn-main' %>
+      <% end %>
     </li>
   </ul>
 </div>
-<%= render 'shared/footer_collection_active' %>
+<%= render 'shared/footer_challenge_active' %>
+<% end %>

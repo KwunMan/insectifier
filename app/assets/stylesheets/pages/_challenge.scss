@@ -20,7 +20,7 @@
   color: white;
   position: relative;
   border-radius: 5px;
-  margin-bottom: 25px;
+  margin-bottom: 12px;
 }
 
 .challenge-cards {
@@ -38,4 +38,15 @@
 
 .wrong-content {
   text-align: center
+}
+
+.absolute {
+  position: absolute;
+  top: 25px;
+}
+
+.absolute-card {
+  position: absolute;
+  top: 150px;
+  right: 72px;
 }

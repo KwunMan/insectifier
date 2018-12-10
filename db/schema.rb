@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_06_081418) do
+ActiveRecord::Schema.define(version: 2018_12_10_050537) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,10 +37,12 @@ ActiveRecord::Schema.define(version: 2018_12_06_081418) do
   create_table "challenges", force: :cascade do |t|
     t.integer "score"
     t.string "poster"
+    t.string "family"
     t.boolean "clear", default: false, null: false
     t.bigint "insect_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "done"
     t.index ["insect_id"], name: "index_challenges_on_insect_id"
   end
 
