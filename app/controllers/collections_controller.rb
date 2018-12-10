@@ -10,13 +10,14 @@ class CollectionsController < ApplicationController
       @collections = @collections.flatten
     end
 
-    @collections.reverse.uniq { |c| c.insect_id }
+    @collections = @collections.reverse.uniq { |c| c.insect_id }
 
   end
 
   def show
     @collection = Collection.find(params[:id])
-    @encounters = current_user.collections.select {|collection| collection.insect.name == @collection.insect.name}.reverse.pop
+    @encounters = current_user.collections.select {|collection| collection.insect.name == @collection.insect.name}
+    @encounters.pop
 
   end
 
