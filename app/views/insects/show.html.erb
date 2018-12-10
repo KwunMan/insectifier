@@ -63,11 +63,10 @@ Insectified!
       <%= simple_form_for @collection do |f| %>
       <%= f.hidden_field :picture, :value => @collection.picture %>
       <%= f.hidden_field :insect_id, :value => @insect.id %>
-      <%= f.hidden_field :latitude, :value =>  %>
       <button class="btn-main">
-        <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>
         <h3>Add to collection</h3>
+        <div class="btn-main-wrapper"></div>
         <% end %>
       </button>
     </li>
