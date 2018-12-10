@@ -1,6 +1,6 @@
 .btn-main {
   background-color: #ffb330;
-  min-width: 150px;
+  min-width: 110px;
   min-height: 60px;
   margin: 0px 5px;
   border-radius: 6px;
@@ -15,7 +15,7 @@
 
 .btn-main-red {
   background-color: #db2f08;
-  min-width: 150px;
+  min-width: 110px;
   min-height: 60px;
   margin: 0px 5px;
   border-radius: 6px;
@@ -75,9 +75,16 @@
   // left: 4px;
 }
 
+label, button {
+  h3 {
+    font-size: 25px;
+        margin: auto;
+  }
+}
+
 .btn-main h3,
 .btn-main a {
-  z-index: 1;
+  z-index: 0;
   font-weight: bold;
   color: white;
   text-shadow:
@@ -94,7 +101,7 @@
 .btn-main-red h3,
 .btn-main-red a {
   text-decoration: none;
-  z-index: 1;
+  z-index: 0;
   font-weight: bold;
   color: white;
   text-shadow:
