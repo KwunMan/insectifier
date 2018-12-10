@@ -9,10 +9,15 @@ class CollectionsController < ApplicationController
       @collections = collections
       @collections = @collections.flatten
     end
+
+
+
   end
 
   def show
     @collection = Collection.find(params[:id])
+    @encounters = current_user.collections.select {|collection| collection.insect.name == @collection.insect.name}.reverse
+
   end
 
   def new
