@@ -53,14 +53,25 @@
   margin-right: 2px;
 }
 
-.insect-number {
-  // // width: 120px;
-  // display:flex;
-  // align-items: center;
-  // justify-content: space-between;
-  margin-bottom: 3%;
-}
 
 .insect-collection {
   // margin: 30px;
+
+  width: 200px;
 }
+
+.insect-number p {
+  margin-bottom: 3%;
+  font-size: 14px;
+}
+
+#padding-last-child {
+  padding-bottom: 10px;
+}
+
+.insect-collection {
+
+  margin: 0px;
+
+}
+

@@ -12,9 +12,11 @@
         <h3>Insectify</h3>
       </div>
       <span style="display:none;">
+
         <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "this.form.submit()" } %>
         <%= f.input :photo_cache, as: :hidden %>
       </span>
+
     </label>
   <% end %>
   <br>
