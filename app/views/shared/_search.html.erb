@@ -1,6 +1,13 @@
-<%= form_tag collections_path, method: :get do %>
-  <%= text_field_tag :search,params[:search],class: "form-control form-inline",placeholder: "Search" %>
-  <button>
-    Find
-  </button>
-<% end %>
+<%#= form_tag collections_path, class: "form-inline", method: :get do %>
+  <%#= text_field_tag :search, params[:search], class: "form-group", style: "color: #000000", placeholder: "Search" %>
+  <!--   <button class="form-group"> -->
+  <!-- <button type="submit" class="fas fa-search"></button> -->
+  <!--   </button> -->
+  <%# end %>
+  <div class="search-bar">
+    <%= form_tag collections_path, style: "display:flex;", method: :get do %>
+      <%= text_field_tag :search, params[:search], class: "search-field form-control", placeholder: "Search", style: "color: #ffffff;"%>
+      <!-- <input type="text" class="form-control"  placeholder="Search" > -->
+      <button class="fas fa-search"></button>
+    <%end%>
+  </div>
