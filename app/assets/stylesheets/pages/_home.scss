@@ -3,6 +3,7 @@
 .wrapper {
   height: calc(100vh - 70px);
   text-align: center;
+  overflow:auto;
   // background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(34, 116, 165, 1) 33%, rgba(68, 159, 229, 1) 89%);
   // background: linear-gradient(to right, #005c97, #363795);
   // background: linear-gradient(to right, #000428, #004e92);

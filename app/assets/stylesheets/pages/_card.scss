@@ -24,12 +24,14 @@
 
 .card-name {
   position: absolute;
-  top: -25px;
-  left: 5px;
+  top: 0px;
+  left: 0px;
 }
 
-.card-name h2 {
+.card-name h4 {
   font-size: 20px;
+  margin-top:auto;
+  padding:3px;
 }
 
 .card-link {
@@ -65,5 +67,7 @@
 }
 
 .insect-collection {
+
   margin: 0px;
 }
+
