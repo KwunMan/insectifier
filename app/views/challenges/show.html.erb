@@ -9,7 +9,7 @@ Catch!
   </div>
   <div class="challenge-description">
     <p>
-      Catch it to get 10,000pt!
+      <%= "Catch #{@challenge.poster.chop.chop.chop.chop} to get #{@challenge.score}pt!" %>
     </p>
   </div>
 </div>
@@ -20,6 +20,7 @@ Catch!
         <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>
         <h3>Hunting</h3>
+        <%= link_to "", edit_challenge_path, class: 'card-link' %>
       </button>
     </li>
   </ul>

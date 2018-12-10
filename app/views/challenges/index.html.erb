@@ -2,19 +2,14 @@
 Challenge
 <% end %>
 <div class="wrapper-content-page">
-  <div class="challenge-container">
-    <div class="challenge-row">
-      <div class="challenge-cards">
-        <% @challenges.each do |challenge| %>
-        <div class="col-xs-3">
-          <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path challenge.poster%>');">
-            <%= link_to "", challenge_path(challenge), class: 'challenge-link' %>
-          </div>
-        </div>
-        <% end %>
+  <div class="challenge-cards">
+    <% @challenges.each do |challenge| %>
+    <div class="col-xs-3">
+      <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path challenge.poster%>');">
+        <%= link_to "", challenge_path(challenge), class: 'card-link' %>
       </div>
     </div>
+    <% end %>
   </div>
 </div>
-</div>
-<%= render 'shared/footer_collection_active' %>
+<%= render 'shared/footer_challenge_active' %>
