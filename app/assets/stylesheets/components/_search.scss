@@ -1,6 +1,6 @@
 .search-bar {
   // margin: 0 auto;
-  width: calc(100vw-40px);
+  // width: calc(100vw-40px);
   height: 39px;
   color: white;
   button {
@@ -15,6 +15,7 @@
   }
   flex: 0 1 48%;
   // display:inline
+  margin-bottom: 2%;
 }
 
 .search-field {
