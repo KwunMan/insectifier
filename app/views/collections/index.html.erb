@@ -5,19 +5,19 @@
   <div class="container">
     <% if @collections.present? %>
 
-
-    <div class="insect-collection">
-      <div class="insect-number">
-        <p style="color:#ffffff;">
-          <!-- uncomment to call search bar below  -->
-          <%= render 'shared/search' %>
-        </p>
-        <p>
+      <div class="insect-collection">
+        <div class="insect-number">
+          <div>
+            <%= render 'shared/search' %>
+          <p>
           <%= "Total insects: # #{@collections.size}" %>
         </p>
         <p id="padding-last-child">
           <%= "Unique insects: # #{ @unique_collections.size }" %>
         </p>
+          </div>
+        </div>
+
       </div>
     </div>
     <div class="row-card">
@@ -39,5 +39,7 @@
       <h2 class="text-center">You don't have any insects!</h2>
     <% end %>
   </div>
+  <br>
+  <br>
 </div>
 <%= render 'shared/footer_collection_active' %>
