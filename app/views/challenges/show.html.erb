@@ -4,13 +4,11 @@ Already hunted
 <% end %>
 <div class="wrapper">
   <div class="container-challenge-page">
-    <div class="challenge-image">
-      <%= image_tag @challenge.poster, :size =>'280x420' %>
-      <%= image_tag("done.png", :class => "absolute-card", :size =>'250x250') %>
-    </div>
+    <%= image_tag(@challenge.poster, :class =>"done-card", :size =>'280x420') %>
+    <%= image_tag("completed.png", :class => "absolute-card", :size =>'260x260') %>
   </div>
 </div>
-<%= render 'shared/footer_collection_active' %>
+<%= render 'shared/footer_challenge_active' %>
 <% else %>
 <% content_for :title do %>
 Catch!
