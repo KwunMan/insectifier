@@ -11,7 +11,7 @@ Insect.destroy_all
 
 insects_array = %w[ladybug spider ant moth beetle]
 rare_array = %w[Everywhere common uncommon rare Almost-mythical]
-challenge_array = ["Beetle.png","Ant.png","Dragonfly.png","Butterfly.png"]
+challenge_array = ["Beetle.png","Ant.png","Dragonfly.png","Butterfly.png","Locust.png"]
 
 puts "creating insect"
 5.times do
@@ -31,9 +31,17 @@ puts "creating collection"
 end
 
 puts "creating challenge"
-12.times  do
-  challenge = Challenge.new
-  challenge.poster = challenge_array.sample
-  challenge.insect = Insect.all.sample
+2.times do
+  challenge = Challenge.create!(score: 10_000, poster: "Beetle.png", clear: false, insect: Insect.all.sample)
+  challenge.save
+  challenge = Challenge.create!(score: 100, poster: "Ant.png", clear: false, insect: Insect.all.sample)
+  challenge.save
+  challenge = Challenge.create!(score: 1_500, poster: "Butterfly.png", clear: false, insect: Insect.all.sample)
+  challenge.save
+  challenge = Challenge.create!(score: 900, poster: "Dragonfly.png", clear: false, insect: Insect.all.sample)
+  challenge.save
+  challenge = Challenge.create!(score: 7_000, poster: "Locust.png", clear: false, insect: Insect.all.sample)
+  challenge.save
+  challenge = Challenge.create!(score: 20_000, poster: "Tarantula.png", clear: false, insect: Insect.all.sample)
   challenge.save
 end
