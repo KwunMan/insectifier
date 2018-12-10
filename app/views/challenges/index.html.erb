@@ -2,14 +2,25 @@
 Challenge
 <% end %>
 <div class="wrapper-content-page">
+  <div class="score">
+    <p>
+      <%= "Your score - #{@score} Pt" %>
+    </p>
+  </div>
   <div class="challenge-cards">
     <% @challenges.each do |challenge| %>
     <div class="col-xs-3">
-      <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path challenge.poster%>');">
-        <%= link_to "", challenge_path(challenge), class: 'card-link' %>
+      <% if challenge.done? %>
+      <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= image_path challenge.poster%>');">
+        <%= image_tag("completed.png", :class => "absolute", :size =>'80x45') %>
+        <% else %>
+        <div class="challenge-card" style="background-image: url('<%= image_path challenge.poster%>');">
+          <% end %>
+          <%= link_to "", challenge_path(challenge), class: 'card-link' %>
+        </div>
       </div>
+      <% end %>
     </div>
-    <% end %>
   </div>
 </div>
 <%= render 'shared/footer_challenge_active' %>

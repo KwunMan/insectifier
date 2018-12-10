@@ -3,6 +3,7 @@ class CreateChallenges < ActiveRecord::Migration[5.2]
     create_table :challenges do |t|
       t.integer :score
       t.string :poster
+      t.string :family
       t.references :insect, foreign_key: true
       t.timestamps
     end
