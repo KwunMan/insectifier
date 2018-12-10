@@ -48,16 +48,17 @@ Insectified!
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-      <button class="btn-main-red">
+      <button class="btn-main-red" id="location">
         <div class="btn-main-wrapper-red"></div>
         <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", root_path%></h3>
+        <h3><%= link_to "Add location", root_path%></h3>
       </button>
     </li>
     <li>
       <%= simple_form_for @collection do |f| %>
       <%= f.hidden_field :picture, :value => @collection.picture %>
       <%= f.hidden_field :insect_id, :value => @insect.id %>
+      <%= f.hidden_field :latitude, :value =>  %>
       <button class="btn-main">
         <div class="btn-main-wrapper"></div>
         <div class="btn-main-white-top"></div>

@@ -12,6 +12,7 @@ class InsectsController < ApplicationController
   def show
     @insect = Insect.find(params[:id])
     @collection = Collection.find(params[:collection_id])
+
   end
 
   def create
