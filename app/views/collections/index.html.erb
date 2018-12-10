@@ -1,9 +1,11 @@
 <% content_for :title do %>
-Collection
+  Collection
 <% end %>
 <div class="wrapper-content-page">
   <div class="container">
     <% if @collections.present? %>
+
+
     <div class="insect-collection">
       <div class="insect-number">
         <p style="color:#ffffff;">
@@ -28,15 +30,13 @@ Collection
               <%= collection.insect.rarity %>
             </div>
             <div class="card-name">
-              <h2><%= collection.insect.name %></h2>
+              <h4><%= collection.insect.name %></h4>
             </div>
-          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
-    </div>
     <% else %>
-    <h2 class="text-center">You don't have any insects!</h2>
+      <h2 class="text-center">You don't have any insects!</h2>
     <% end %>
   </div>
 </div>

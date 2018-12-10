@@ -4,9 +4,9 @@ Insectified!
 <div class="wrapper">
   <div class="container-content-page">
     <%if @insect.dangerous %>
-    <h2 style="color: red; font-weight:bold;font-size: 40px;">You have encountered a dangerous insect!</h2>
+    <h2 style="color: red; font-weight:bold;font-size: 40px;">This insect is DANGEROUS!</h2>
     <%else %>
-    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless</h2>
+    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless!</h2>
     <% end %>
     <div class="top-inline" style="text-align:center">
       <div class="image">
@@ -65,28 +65,31 @@ Insectified!
       </p>
     </div>
   </div>
-</div>
-<div class="container-main-page">
-  <ul class="list-inline">
-    <li>
-      <button class="btn-main-red" id="location">
-        <div class="btn-main-wrapper-red"></div>
-        <div class="btn-main-white-top"></div>
-        <h3><%= link_to "Cancel", root_path%></h3>
-      </button>
-    </li>
-    <li>
-      <%= simple_form_for @collection do |f| %>
-      <%= f.hidden_field :picture, :value => @collection.picture %>
-      <%= f.hidden_field :insect_id, :value => @insect.id %>
-      <button class="btn-main">
-        <div class="btn-main-white-top"></div>
-        <h3>Add to collection</h3>
-        <div class="btn-main-wrapper"></div>
-        <% end %>
-      </button>
-    </li>
-  </ul>
+  <center>
+    <ul class="list-inline">
+      <li>
+        <button class="btn-main-red">
+          <div class="btn-main-wrapper-red"></div>
+          <div class="btn-main-white-top"></div>
+          <h3><%= link_to "Cancel", root_path%></h3>
+        </button>
+      </li>
+      <li>
+        <%= simple_form_for @collection do |f| %>
+        <%= f.hidden_field :picture, :value => @collection.picture %>
+        <%= f.hidden_field :insect_id, :value => @insect.id %>
+        <button class="btn-main">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Add to collection</h3>
+          <% end %>
+        </button>
+      </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+  </center>
 </div>
 <%= render 'shared/footer_collection_active' %>
 </div>
