@@ -9,8 +9,7 @@ class CollectionsController < ApplicationController
       @collections = collections
       @collections = @collections.flatten
     end
-
-    @collections = @collections.reverse.uniq { |c| c.insect_id }
+    @unique_collections = @collections.reverse.uniq { |c| c.insect_id }
 
   end
 
