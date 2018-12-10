@@ -12,12 +12,12 @@ class InsectsController < ApplicationController
   def show
     @insect = Insect.find(params[:id])
     @collection = Collection.find(params[:collection_id])
-
   end
 
   def create
     @collection = Collection.new
     @collection.picture = insect_params[:photo]
+    wait = Selenium::WebDriver::Wait.new(:timeout => 6)
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
     driver = Selenium::WebDriver.for :chrome, options: options
@@ -29,17 +29,21 @@ class InsectsController < ApplicationController
     classify = nil
     until classify.present?
       sleep 0.2
-      classify = driver.find_element(:class => "classify")
+      classify = driver.find_element(:css => ".classify > button")
     end
 
-    sleep(2)
-    classify.click
-    sleep(3)
-    link = driver.find_element(:xpath => "//*[@id='app']/div/div/div/div[1]/div[2]/div[1]/div/div[2]/div[1]/span" )
+    until classify.enabled?
+      sleep 0.5
+      classify.click
+    end
+
+    link = wait.until {
+      driver.find_element(:xpath => "//*[@id='app']/div/div/div/div[1]/div[2]/div[1]/div/div[2]/div[1]/span" )
+    }
+
     names = link.attribute("title").split('(')
     common_name = names.first
     scientific_name = names.last.tr(')', '')
-
 
     @insect = Insect.find_by(scientific_name: scientific_name)
     if @insect.nil?

@@ -1,23 +1,21 @@
 <% content_for :title do %>
-  Collection
+Collection
 <% end %>
 <div class="wrapper-content-page">
   <div class="container">
     <% if @collections.present? %>
-
-      <div class="insect-collection">
-        <div class="insect-number">
-          <div>
-            <%= render 'shared/search' %>
+    <div class="insect-collection">
+      <div class="insect-number">
+        <div>
           <p>
-          <%= "Total insects: # #{@collections.size}" %>
-        </p>
-        <p id="padding-last-child">
-          <%= "Unique insects: # #{ @unique_collections.size }" %>
-        </p>
-          </div>
+            <%= "Total insects: # #{@collections.size}" %>
+          </p>
+          <p id="padding-last-child">
+            <%= "Unique insects: # #{ @unique_collections.size }" %>
+          </p>
         </div>
-
+        <!-- uncomment to call search bar below  -->
+        <%= render 'shared/search' %>
       </div>
     </div>
     <div class="row-card">
@@ -32,11 +30,13 @@
             <div class="card-name">
               <h4><%= collection.insect.name %></h4>
             </div>
-          <% end %>
+          </div>
         </div>
+        <% end %>
       </div>
+    </div>
     <% else %>
-      <h2 class="text-center">You don't have any insects!</h2>
+    <h2 class="text-center">You don't have any insects!</h2>
     <% end %>
   </div>
   <br>
