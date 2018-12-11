@@ -4,7 +4,7 @@ Challenge already completed!
 <% end %>
 <div class="wrapper-challenge">
   <div class="container-challenge-page">
-    <%= image_tag(@challenge.poster, :size =>'280x390') %>
+    <%= image_tag(@challenge.poster, :class => "rounded",:size =>'280x390') %>
     <%= image_tag("completed.png", :class => "absolute-card",:size =>'260x260') %>
   </div>
   <button class="btn-main">
@@ -19,7 +19,7 @@ Catch!
 <% end %>
 <div class="wrapper-challenge">
   <div class="container-challenge-page">
-    <%= image_tag @challenge.poster, :size => '280x390'%>
+    <%= image_tag @challenge.poster, :class => "rounded",:size => '280x390'%>
   </div>
   <ul class="list-inline">
     <li>
