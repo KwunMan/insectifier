@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   resources :collections, only: [:index, :create ,:update, :show]
   resources :challenges, only: [:show, :index] do
     resources :achievement_collections, only: [:create]
+    # resources :badges, only: [:show]
   end
+  resources :badges, only: [:index, :show]
   # patch '/challenges/:id', to: 'challenges#update', as: :challenge_update
 
 end

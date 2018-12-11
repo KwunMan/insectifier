@@ -1,48 +1,16 @@
-<% if @challenge.done?(current_user) %>
+<% if @badge.challenge.done?(current_user) %>
   <% content_for :title do %>
-    Already hunted
+    Badge unlocked!
   <% end %>
   <div class="wrapper">
-    <div class="container-challenge-page">
-      <%#= image_tag(@challenge.poster, :class =>"done-card", :size =>'280x420') %>
-    </div>
+    <p>Congratulation. You are now able to use this badge as your reward for catching <%= @badge.challenge.poster.chomp(".png") %> </p>
   </div>
 <% else %>
   <% content_for :title do %>
-    Catch!
+    Badge is locked
   <% end %>
   <div class="wrapper">
-    <div class="container-challenge-page">
-      <div class="challenge-image">
-        <%= image_tag @challenge.poster, :size =>'280x420' %>
-      </div>
-    </div>
-    <div class="challenge-description">
-      <p>
-        <%= "Catch #{@challenge.poster.chop.chop.chop.chop} to get #{@challenge.score}pt!" %>
-      </p>
-    </div>
-  </div>
-  <div class="container-main-page">
-    <ul class="list-inline">
-      <li>
-        <% if @challenge.condition_fullfilled?(current_user) %>
-          <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
-            <button class="btn-main">
-              <div class="btn-main-wrapper"></div>
-              <div class="btn-main-white-top"></div>
-              <h3>Claim reward</h3>
-            <% end %>
-          </button>
-        <%else %>
-          <button class="btn-main gray">
-            <div class="btn-main-wrapper light_gray"></div>
-            <div class="btn-main-white-top"></div>
-            <h3>Claim reward</h3>
-          </button>
-        <% end %>
-      </li>
-    </ul>
+    <p>In order to unlock this badge. You must complete the challenge of catching #insect </p>
   </div>
 <% end %>
 <%= render 'shared/footer_challenge_active' %>
