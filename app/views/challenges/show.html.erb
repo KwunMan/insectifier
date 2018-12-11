@@ -1,4 +1,4 @@
-<% if @challenge.done? %>
+<% if @challenge.done?(current_user) %>
 <% content_for :title do %>
 Already hunted
 <% end %>
@@ -8,7 +8,6 @@ Already hunted
     <%= image_tag("completed.png", :class => "absolute-card", :size =>'260x260') %>
   </div>
 </div>
-<%= render 'shared/footer_challenge_active' %>
 <% else %>
 <% content_for :title do %>
 Catch!
@@ -28,20 +27,25 @@ Catch!
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-      <%= simple_form_for @challenge do |f| %>
-      <label>
-        <div class="btn-main">
-          <div class="btn-main-wrapper"></div>
-          <div class="btn-main-white-top"></div>
-          <h3>Hunted</h3>
-        </div>
-        <span style="display:none;">
-        <%= f.button :submit, "Hunted!", :class => 'btn-main' %>
-        </span>
-      </label>
+
+      <% if @challenge.condition_fullfilled?(current_user) %>
+      <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
+      <button class="btn-main">
+        <div class="btn-main-wrapper"></div>
+        <div class="btn-main-white-top"></div>
+        <h3>Claim reward</h3>
+        <% end %>
+      </button>
+      <%else %>
+      <button class="btn-main gray">
+        <div class="btn-main-wrapper light_gray"></div>
+        <div class="btn-main-white-top"></div>
+        <h3>Claim reward</h3>
+      </button>
+
       <% end %>
     </li>
   </ul>
 </div>
-<%= render 'shared/footer_challenge_active' %>
 <% end %>
+<%= render 'shared/footer_challenge_active' %>
