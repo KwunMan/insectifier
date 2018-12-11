@@ -1,12 +1,3 @@
-.challenge-description {
-  background-color: black;
-  color: white;
-  height: 5%;
-  width: 95%;
-  margin-top: 1%;
-  margin: 0 auto;
-}
-
 .container-challenge-page {
   margin-bottom: 3%;
 }
@@ -51,6 +42,59 @@
   right: 71px;
 }
 
-.score {
-  text-align: center;
+.leader-score {
+  position: absolute;
+  right: 20px;
+  bottom: 1px;
+}
+
+.leader-table {
+  height: 46px;
+  background-color: rgba(30, 255, 255, 0.5);
+  margin: 10px;
+  width: 96%;
+  border-radius: 10px;
+  box-shadow: 0px 2px 3px 3px #6b6373;
+  color: white;
+  position: relative;
+
+  ul {
+    list-style-type: none;
+    text-align: left;
+
+    li {
+      display: inline-block;
+
+
+    }
+  }
+}
+
+.medal {
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 10px;
+  bottom: 17px;
+
+
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+
+  }
+}
+
+.leader-username {
+  position: absolute;
+  left: 55px;
+  bottom: 1px;
+}
+
+.rank {
+  position: absolute;
+  left: 20px;
+  bottom: -5px;
 }

@@ -18,16 +18,10 @@ Catch!
       <%= image_tag @challenge.poster, :size =>'280x420' %>
     </div>
   </div>
-  <div class="challenge-description">
-    <p>
-      <%= "Catch #{@challenge.poster.chop.chop.chop.chop} to get #{@challenge.score}pt!" %>
-    </p>
-  </div>
 </div>
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
-
       <% if @challenge.condition_fullfilled?(current_user) %>
       <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
       <button class="btn-main">
@@ -42,7 +36,6 @@ Catch!
         <div class="btn-main-white-top"></div>
         <h3>Claim reward</h3>
       </button>
-
       <% end %>
     </li>
   </ul>

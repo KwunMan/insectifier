@@ -32,4 +32,18 @@ class User < ApplicationRecord
       errors.add(:username, :invalid)
     end
   end
+
+  def challenge_score
+    score = 0
+    self.challenges.each do |challenge|
+      score += challenge.score
+    end
+    return score
+  end
+
+  def total_score
+    scores = 0
+    scores = user.challenge_score + @collections.size + @unique_collections.size
+    return score
+  end
 end
