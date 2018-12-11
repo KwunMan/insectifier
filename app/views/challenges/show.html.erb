@@ -1,12 +1,17 @@
 <% if @challenge.done?(current_user) %>
 <% content_for :title do %>
-Already hunted
+Challenge already completed!
 <% end %>
-<div class="wrapper">
+<div class="wrapper-challenge">
   <div class="container-challenge-page">
-    <%= image_tag(@challenge.poster, :class =>"done-card", :size =>'280x420') %>
-    <%= image_tag("completed.png", :class => "absolute-card", :size =>'260x260') %>
+    <%= image_tag(@challenge.poster, :size =>'280x390') %>
+    <%= image_tag("completed.png", :class => "absolute-card",:size =>'260x260') %>
   </div>
+  <button class="btn-main">
+    <div class="btn-main-wrapper"></div>
+    <div class="btn-main-white-top"></div>
+    <h3><%= link_to "Return", challenges_path %></h3>
+  </button>
 </div>
 <% else %>
 <% content_for :title do %>
