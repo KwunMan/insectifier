@@ -5,12 +5,12 @@ class ChallengesController < ApplicationController
 
   def index
     @challenges = Challenge.all
-    @score = 0
-    @challenges.each do |challenge|
-      if challenge.done?
-        @score += challenge.score
-      end
-    end
+    # @score = 0
+    # @challenges.each do |challenge|
+    #   if challenge.done?
+    #     @score += challenge.score
+    #   end
+    # end
   end
 
   def update

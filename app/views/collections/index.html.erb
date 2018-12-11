@@ -1,42 +1,40 @@
 <% content_for :title do %>
-  Collection
+Collection
 <% end %>
 <div class="wrapper-content-page">
   <div class="container">
+    <div class="insect-collection">
+      <div class="insect-number">
+        <div>
+          <%= render 'shared/search' %>
+          <p>
+            <%= "Total insects: # #{@collections.size}" %>
+          </p>
+          <p id="padding-last-child">
+            <%= "Unique insects: # #{ @unique_collections.size }" %>
+          </p>
+        </div>
+        <!-- uncomment to call search bar below  -->
+      </div>
+    </div>
     <% if @collections.present? %>
-      <div class="insect-collection">
-        <div class="insect-number">
-          <div>
-            <%= render 'shared/search' %>
-            <p>
-              <%= "Total insects: # #{@collections.size}" %>
-            </p>
-            <p id="padding-last-child">
-              <%= "Unique insects: # #{ @unique_collections.size }" %>
-            </p>
-          </div>
-          <!-- uncomment to call search bar below  -->
-        </div>
-      </div>
-      <div class="row-card">
-        <div class="cards">
-          <% @unique_collections.each do |collection| %>
-            <div class="col-xs-3">
-              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
-                <%= link_to "", collection_path(collection), class: 'card-link' %>
-                <div class="card-rare">
-                  <%= collection.insect.rarity %>
-                </div>
-                <div class="card-name">
-                  <h4><%= collection.insect.name %></h4>
-                </div>
-              </div>
+    <div class="row-card">
+      <div class="cards">
+        <% @unique_collections.each do |collection| %>
+        <div class="col-xs-3">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
+            <%= link_to "", collection_path(collection), class: 'card-link' %>
+            <div class="card-rare">
+              <%= collection.insect.rarity %>
             </div>
-          <% end %>
+            <div class="card-name">
+              <h4><%= collection.insect.name %></h4>
+            </div>
+          </div>
         </div>
+        <% end %>
       </div>
-    <% else %>
-      <h2 class="text-center">You don't have any insects!</h2>
+    </div>
     <% end %>
   </div>
   <br>
