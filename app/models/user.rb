@@ -40,10 +40,4 @@ class User < ApplicationRecord
     end
     return score
   end
-
-  def total_score
-    scores = 0
-    scores = user.challenge_score + @collections.size + @unique_collections.size
-    return score
-  end
 end
