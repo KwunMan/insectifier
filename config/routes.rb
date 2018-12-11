@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'badges/index'
+  get 'badges/show'
   devise_for :users
   root to: 'insects#new'
   resources :insects, only: [:show, :create, :new]
