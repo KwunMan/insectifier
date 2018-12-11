@@ -13,4 +13,8 @@ class ChallengesController < ApplicationController
       end
     end
   end
+
+  def leaderboard
+    @users = User.all
+  end
 end

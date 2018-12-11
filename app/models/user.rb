@@ -5,7 +5,6 @@ class User < ApplicationRecord
     :recoverable, :rememberable, :validatable, authentication_keys: [:login]
   has_many :collections
   has_many :insects, through: :collections
-  belongs_to :leaderboard, optional: true
   validates :username, presence: :true, uniqueness: { case_sensitive: false }
   validates_format_of :username, with: /^[a-zA-Z0-9_\.]*$/, :multiline => true
   validate :validate_username
