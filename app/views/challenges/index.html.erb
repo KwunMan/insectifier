@@ -1,5 +1,5 @@
 <% content_for :title do %>
-Challenge
+Challenges
 <% end %>
 <div class="wrapper-content-page">
   <div class="score">
@@ -10,7 +10,7 @@ Challenge
   <div class="challenge-cards">
     <% @challenges.each do |challenge| %>
     <div class="col-xs-3">
-      <% if challenge.done? %>
+      <% if challenge.done?(current_user) %>
       <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= image_path challenge.poster%>');">
         <%= image_tag("completed.png", :class => "absolute", :size =>'80x45') %>
         <% else %>
