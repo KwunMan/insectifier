@@ -51,7 +51,6 @@ ActiveRecord::Schema.define(version: 2018_12_11_012048) do
     t.bigint "insect_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.boolean "done"
     t.index ["insect_id"], name: "index_challenges_on_insect_id"
   end
 
