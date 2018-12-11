@@ -1,14 +1,26 @@
-.challenge-description {
-  background-color: black;
-  color: white;
-  height: 5%;
-  width: 95%;
-  margin-top: 1%;
-  margin: 0 auto;
+.wrapper-challenge {
+  height: calc(100vh - 70px);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  // background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(34, 116, 165, 1) 33%, rgba(68, 159, 229, 1) 89%);
+  // background: linear-gradient(to right, #005c97, #363795);
+  // background: linear-gradient(to right, #000428, #004e92);
+
+}
+
+.wrapper-challenge button {
+  margin-bottom: 40%;
+
 }
 
 .container-challenge-page {
   margin-bottom: 3%;
+  padding-top: 12%;
+
 }
 
 .challenge-card {
