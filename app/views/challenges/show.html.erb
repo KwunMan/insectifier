@@ -27,6 +27,7 @@ Catch!
 <div class="container-main-page">
   <ul class="list-inline">
     <li>
+
       <% if @challenge.condition_fullfilled?(current_user) %>
       <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
       <button class="btn-main">
@@ -41,6 +42,7 @@ Catch!
         <div class="btn-main-white-top"></div>
         <h3>Claim reward</h3>
       </button>
+
       <% end %>
     </li>
   </ul>
