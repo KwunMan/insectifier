@@ -29,7 +29,16 @@ Catch!
   <ul class="list-inline">
     <li>
       <%= simple_form_for @challenge do |f| %>
-      <%= f.button :submit, "Hunted!", :class => 'btn-main' %>
+      <label>
+        <div class="btn-main">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Hunted</h3>
+        </div>
+        <span style="display:none;">
+        <%= f.button :submit, "Hunted!", :class => 'btn-main' %>
+        </span>
+      </label>
       <% end %>
     </li>
   </ul>
