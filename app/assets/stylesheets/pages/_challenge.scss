@@ -1,7 +1,7 @@
 .wrapper-challenge {
   height: calc(100vh - 70px);
   text-align: center;
-
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -18,7 +18,7 @@
 }
 
 .wrapper-challenge button {
-  margin-bottom: 40%;
+  margin-bottom: 50px;
   max-width: 160px;
 
 }
@@ -28,10 +28,19 @@
 }
 
 .container-challenge-page {
-  margin-bottom: 3%;
-  padding-top: 12%;
+  margin-bottom: 2em;
+
   position: relative;
 
+}
+
+#poster {
+  flex: 0 1 50%;
+  width: 280px;
+}
+
+#not-completed {
+  display: flex;
 }
 
 .challenge-card {
@@ -70,7 +79,7 @@
 
 .absolute-card {
   position: absolute;
-  top: 150px;
+  top: 70px;
   right: 15px;
 }
 
