@@ -5,5 +5,6 @@ class BadgesController < ApplicationController
 
   def show
     @badge = Badge.find(params[:id])
+    @challenge = current_user.challenge
   end
 end

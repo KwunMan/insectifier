@@ -1,9 +1,4 @@
 class ChallengesController < ApplicationController
-  def show
-    @challenge = Challenge.find(params[:id])
-    @achievement_collection = AchievementCollection.new
-  end
-
   def index
     @challenges = Challenge.all
     @score = 0
@@ -12,5 +7,10 @@ class ChallengesController < ApplicationController
         @score += challenge.score
       end
     end
+  end
+
+  def show
+    @challenge = Challenge.find(params[:id])
+    @achievement_collection = AchievementCollection.new
   end
 end
