@@ -13,8 +13,8 @@
     </div>
     <span style="display:none;">
 
-        <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "const loading = document.getElementById('loading-view');
- loading.style.display = 'block'; wrapper.style.display = 'none' this.form.submit();" } %>
+        <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "navbar.style.visibility = 'hidden';  this.form.submit(); setTimeout(() => { wrapper.style.display = 'none'; tabs.style.display = 'none'; const loading = document.getElementById('loading-view');
+ loading.style.display = 'block'; }, 300) " } %>
         <%= f.input :photo_cache, as: :hidden %>
       </span>
   </label>
@@ -32,6 +32,8 @@
 const form = document.getElementById("new_insect");
 console.log(form);
 const wrapper = document.querySelector(".wrapper")
+const tabs = document.querySelector(".tabs")
+const navbar = document.querySelector('.navbar-wagon')
 form.addEventListener("submit", () => {
   console.log("click")
   const loading = document.getElementById("loading-view")
