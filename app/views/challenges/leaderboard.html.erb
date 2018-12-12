@@ -1,0 +1,41 @@
+<% content_for :title do %>
+Ranking
+<% end %>
+<div class="leader-container">
+  <% @users.each_with_index do |user, i|%>
+  <div class="leader-table">
+    <ul>
+      <li>
+        <% if i < 3  %>
+        <%= image_tag("#{i+1}-medal.png", :class => "medal") %>
+        <div class="leader-username">
+          <p>
+            <%= user.username %>
+          </p>
+        </div>
+        <div class="leader-score">
+          <p>
+            <%= "#{user.challenge_score} pt" %>
+          </p>
+        </div>
+        <% else %>
+        <div class="rank">
+          <h3><%= "#{i+1}." %></h3>
+        </div>
+        <div class="leader-username">
+          <p>
+            <%= user.username %>
+          </p>
+        </div>
+        <div class="leader-score">
+          <p>
+            <%= "#{user.challenge_score} pt" %>
+          </p>
+        </div>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <% end %>
+</div>
+<%= render 'shared/footer_challenge_active' %>

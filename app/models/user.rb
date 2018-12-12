@@ -33,5 +33,11 @@ class User < ApplicationRecord
     end
   end
 
-
+  def challenge_score
+    score = 0
+    self.challenges.each do |challenge|
+      score += challenge.score
+    end
+    return score
+  end
 end

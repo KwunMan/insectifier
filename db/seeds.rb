@@ -32,35 +32,35 @@ Challenge.destroy_all
 # end
 
 puts "creating challenge"
-  challenge = Challenge.create!(score: 10_000, poster: "Beetle.png", family: "Scarabaeidae")
+  challenge = Challenge.create!(score: 10_000, poster: "Beetle.jpg", family: "Scarabaeidae")
   challenge.save
-  challenge = Challenge.create!(score: 100, poster: "Ant.png", family: "Formicidae")
+  challenge = Challenge.create!(score: 100, poster: "Ant.jpg", family: "Formicidae")
   challenge.save
-  challenge = Challenge.create!(score: 1_500, poster: "Butterfly.png", family: "Papilionidae")
+  challenge = Challenge.create!(score: 1_500, poster: "Butterfly.jpg", family: "Papilionidae")
   challenge.save
-  challenge = Challenge.create!(score: 900, poster: "Dragonfly.png", family: "Libellulidae")
+  challenge = Challenge.create!(score: 900, poster: "Dragonfly.jpg", family: "Libellulidae")
   challenge.save
-  challenge = Challenge.create!(score: 7_000, poster: "Locust.png", family: "Acrididae")
+  challenge = Challenge.create!(score: 7_000, poster: "Locust.jpg", family: "Acrididae")
   challenge.save
-  challenge = Challenge.create!(score: 20_000, poster: "Tarantula.png", family: "Theraphosidae")
+  challenge = Challenge.create!(score: 20_000, poster: "Tarantula.jpg", family: "Theraphosidae")
   challenge.save
-  challenge = Challenge.create!(score: 500, poster: "Fly.png", family: "Sarcophagidae")
+  challenge = Challenge.create!(score: 500, poster: "Fly.jpg", family: "Sarcophagidae")
   challenge.save
-  challenge = Challenge.create!(score: 12_000, poster: "Firefly.png", family: "Coleoptera")
+  challenge = Challenge.create!(score: 12_000, poster: "Firefly.jpg", family: "Coleoptera")
   challenge.save
-  challenge = Challenge.create!(score: 5_000, poster: "Wasp.png", family: "Vespidae")
+  challenge = Challenge.create!(score: 5_000, poster: "Wasp.jpg", family: "Vespidae")
   challenge.save
-  challenge = Challenge.create!(score: 700, poster: "Water-Strider.png", family: "Gerridae")
+  challenge = Challenge.create!(score: 700, poster: "Water-Strider.jpg", family: "Gerridae")
   challenge.save
-  challenge = Challenge.create!(score: 1_300, poster: "Longhorn-Beetle.png", family: "Cerambycidae")
+  challenge = Challenge.create!(score: 1_300, poster: "Longhorn-Beetle.jpg", family: "Cerambycidae")
   challenge.save
-  challenge = Challenge.create!(score: 2_000, poster: "Cerastipsocus.png", family: "Psocidae")
+  challenge = Challenge.create!(score: 2_000, poster: "Cerastipsocus.jpg", family: "Psocidae")
   challenge.save
-  challenge = Challenge.create!(score: 800, poster: "Stink-Bug.png", family: "Pentatomidae")
+  challenge = Challenge.create!(score: 800, poster: "Stink-Bug.jpg", family: "Pentatomidae")
   challenge.save
-  challenge = Challenge.create!(score: 3_000, poster: "House-Cricket.png", family: "Gryllidae")
+  challenge = Challenge.create!(score: 3_000, poster: "House-Cricket.jpg", family: "Gryllidae")
   challenge.save
-  challenge = Challenge.create!(score: 30_000, poster: "Giant-Water-Bug.png", family: "Belostomatidae")
+  challenge = Challenge.create!(score: 30_000, poster: "Giant-Water-Bug.jpg", family: "Belostomatidae")
   challenge.save
-  challenge = Challenge.create!(score: 150, poster: "Mosquito.png", family: "Culicidae")
+  challenge = Challenge.create!(score: 150, poster: "Mosquito.jpg", family: "Culicidae")
   challenge.save
