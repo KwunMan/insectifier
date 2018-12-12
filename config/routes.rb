@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/update'
   get 'badges/index'
   get 'badges/show'
   devise_for :users

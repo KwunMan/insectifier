@@ -1,15 +1,15 @@
 <% content_for :title do %>
-  Badges
+Badges
 <% end %>
-<div class="wrapper-content-page">
+<div class="wrapper-challenge">
   <div class="row-card">
     <div class="cards">
       <% @badges.each do |badge| %>
-        <div class="col-xs-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path badge.image%>');">
-            <%= link_to "", badge_path(badge), class: 'card-link' %>
-          </div>
+      <div class="col-xs-3">
+        <div class="card avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path badge.image%>');">
+          <%= link_to "", badge_path(badge), class: 'card-link' %>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
