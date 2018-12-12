@@ -2,34 +2,32 @@
 Ranking
 <% end %>
 <div class="leader-container">
-  <% @users.each_with_index do |user, i|%>
-  <div class="leader-table">
-    <ul>
-      <li>
-        <% if i < 3  %>
-        <%= image_tag("#{i+1}-medal.png", :class => "medal") %>
-        <% else %>
-        <div class="rank">
-          <h3><%= "#{i+1}." %></h3>
-        </div>
-        <% end %>
-        <%= image_tag("avatar.png", :class => "leader-avatar") %>
-        <div class="leader-username">
+  <ul>
+    <% @users.each_with_index do |user, i|%>
+    <li class="leader-table">
+      <% if i < 3  %>
+      <%= image_tag("#{i+1}-medal.png", :class => "medal") %>
+      <% else %>
+      <div class="rank">
+        <h3><%= "#{i+1}." %></h3>
+      </div>
+      <% end %>
+      <%= image_tag("insect_badges/#{user.badge}", :class => "leader-avatar") %>
+      <div class="text-center leader-username">
+        <p>
+          <%= user.username %>
+        </p>
+      </div>
+      <div class="score-trophy">
+        <div class="leader-score">
           <p>
-            <%= user.username %>
+            <%= user.total_score %>
           </p>
         </div>
-        <div class="score-trophy">
-          <div class="leader-score">
-            <p>
-              <%= user.total_score %>
-            </p>
-          </div>
-          <%= image_tag("trophy.png", :class => "trophy") %>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <% end %>
+        <%= image_tag("trophy.png", :class => "trophy") %>
+      </div>
+    </li>
+    <% end %>
+  </ul>
 </div>
 <%= render 'shared/footer_challenge_active' %>

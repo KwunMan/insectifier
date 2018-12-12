@@ -17,7 +17,6 @@ class ChallengesController < ApplicationController
 
   def leaderboard
     users = User.all
-
     @collections = Collection.all
     @users = users.sort {|aa, bb| bb.total_score <=> aa.total_score}
 
