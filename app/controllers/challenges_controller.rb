@@ -1,9 +1,4 @@
 class ChallengesController < ApplicationController
-  def show
-    @challenge = Challenge.find(params[:id])
-    @achievement_collection = AchievementCollection.new
-  end
-
   def index
     @challenges = Challenge.all
     @score = 0
@@ -14,9 +9,16 @@ class ChallengesController < ApplicationController
     end
   end
 
+
+  def show
+    @challenge = Challenge.find(params[:id])
+    @achievement_collection = AchievementCollection.new
+
   def leaderboard
     users = User.all
+
     @collections = Collection.all
     @users = users.sort {|aa, bb| bb.total_score <=> aa.total_score}
+
   end
 end

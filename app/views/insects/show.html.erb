@@ -1,12 +1,12 @@
 <% content_for :title do %>
-Insectified!
+  Insectified!
 <% end %>
 <div class="wrapper">
   <div class="container-content-page">
     <%if @insect.dangerous %>
-    <h2 style="color: red; font-weight:bold;font-size: 40px;">This insect is DANGEROUS!</h2>
+      <h2 style="color: red; font-weight:bold;font-size: 40px;">This insect is DANGEROUS!</h2>
     <%else %>
-    <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless!</h2>
+      <h2 style="color: #33ed00;font-size: 40px; font-weight: bold;">This insect is harmless!</h2>
     <% end %>
     <div class="top-inline" style="text-align:center">
       <div class="image">
@@ -21,13 +21,13 @@ Insectified!
             <%= @insect.scientific_name %>
           </li>
           <% if @insect.dangerous %>
-          <li><b>Dangerous?</b>
-            <span style="color: red; font-weight: bold;">Yes</span>
-          </li>
+            <li><b>Dangerous?</b>
+              <span style="color: red; font-weight: bold;">Yes</span>
+            </li>
           <%else %>
-          <li><b>Dangerous?</b>
-            <span style= "color: green; font-weight: bold;">No</span>
-          </li>
+            <li><b>Dangerous?</b>
+              <span style= "color: green; font-weight: bold;">No</span>
+            </li>
           <%end %>
           <li>
             <button class="collapsible">Taxonomy</button>
@@ -77,12 +77,12 @@ Insectified!
       </li>
       <li>
         <%= simple_form_for @collection do |f| %>
-        <%= f.hidden_field :picture, :value => @collection.picture %>
-        <%= f.hidden_field :insect_id, :value => @insect.id %>
-        <button class="btn-main">
-          <div class="btn-main-wrapper"></div>
-          <div class="btn-main-white-top"></div>
-          <h3>Add to collection</h3>
+          <%= f.hidden_field :picture, :value => @collection.picture %>
+          <%= f.hidden_field :insect_id, :value => @insect.id %>
+          <button class="btn-main">
+            <div class="btn-main-wrapper"></div>
+            <div class="btn-main-white-top"></div>
+            <h3>Add to collection</h3>
           <% end %>
         </button>
       </li>

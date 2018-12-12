@@ -1,0 +1,16 @@
+<% if @badge.challenge.done?(current_user) %>
+  <% content_for :title do %>
+    Badge unlocked!
+  <% end %>
+  <div class="wrapper">
+    <p>Congratulation. You are now able to use this badge as your reward for catching <%= @badge.challenge.poster.chomp(".png") %> </p>
+  </div>
+<% else %>
+  <% content_for :title do %>
+    Badge is locked
+  <% end %>
+  <div class="wrapper">
+    <p>In order to unlock this badge. You must complete the challenge of catching #insect </p>
+  </div>
+<% end %>
+<%= render 'shared/footer_challenge_active' %>
