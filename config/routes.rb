@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/update'
   get 'badges/index'
   get 'badges/show'
   devise_for :users
@@ -11,7 +12,11 @@ Rails.application.routes.draw do
     resources :achievement_collections, only: [:create]
 
   end
-  resources :badges, only: [:index, :show]
+  resources :badges, only: [:index, :show] do
+    resources :users, only: [:update]
+
+
+  end
   # patch '/challenges/:id', to: 'challenges#update', as: :challenge_update
   get '/home', to: "pages#home", as: :home
 
