@@ -7,13 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "Seeding database"
 Collection.destroy_all
+AchievementCollection.destroy_all
 Insect.destroy_all
-Challenge.destroy_all
 Badge.destroy_all
+Challenge.destroy_all
+
 
 # insects_array = %w[ladybug spider ant moth beetle]
 # rare_array = %w[Everywhere common uncommon rare Almost-mythical]
-# challenge_array = ["Beetle.png","Ant.png","Dragonfly.png","Butterfly.png","Locust.png"]
+# challenge_array = ["Beetle.jpg","Ant.jpg","Dragonfly.jpg","Butterfly.jpg","Locust.jpg"]
 
 # puts "creating insect"
 # 5.times do
@@ -34,37 +36,37 @@ Badge.destroy_all
 
 puts "creating challenge"
 
-challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.png", family: "Scarabaeidae")
+challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.jpg", family: "Scarabaeidae")
 challenge1.save
-challenge2 = Challenge.create!(score: 100, poster: "Ant.png", family: "Formicidae")
+challenge2 = Challenge.create!(score: 100, poster: "Ant.jpg", family: "Formicidae")
 challenge2.save
-challenge3 = Challenge.create!(score: 1_500, poster: "Butterfly.png", family: "Papilionidae")
+challenge3 = Challenge.create!(score: 1_500, poster: "Butterfly.jpg", family: "Papilionidae")
 challenge3.save
-challenge4 = Challenge.create!(score: 900, poster: "Dragonfly.png", family: "Libellulidae")
+challenge4 = Challenge.create!(score: 900, poster: "Dragonfly.jpg", family: "Libellulidae")
 challenge4.save
-challenge5 = Challenge.create!(score: 7_000, poster: "Locust.png", family: "Acrididae")
+challenge5 = Challenge.create!(score: 7_000, poster: "Locust.jpg", family: "Acrididae")
 challenge5.save
-challenge6 = Challenge.create!(score: 20_000, poster: "Tarantula.png", family: "Theraphosidae")
+challenge6 = Challenge.create!(score: 20_000, poster: "Tarantula.jpg", family: "Theraphosidae")
 challenge6.save
-challenge7 = Challenge.create!(score: 500, poster: "Fly.png", family: "Sarcophagidae")
+challenge7 = Challenge.create!(score: 500, poster: "Fly.jpg", family: "Sarcophagidae")
 challenge7.save
-challenge8 = Challenge.create!(score: 12_000, poster: "Firefly.png", family: "Coleoptera")
+challenge8 = Challenge.create!(score: 12_000, poster: "Firefly.jpg", family: "Coleoptera")
 challenge8.save
-challenge9 = Challenge.create!(score: 5_000, poster: "Wasp.png", family: "Vespidae")
+challenge9 = Challenge.create!(score: 5_000, poster: "wasp.jpg", family: "Vespidae")
 challenge9.save
-challenge10 = Challenge.create!(score: 700, poster: "Water-Strider.png", family: "Gerridae")
+challenge10 = Challenge.create!(score: 700, poster: "Water-Strider.jpg", family: "Gerridae")
 challenge10.save
-challenge11 = Challenge.create!(score: 1_300, poster: "Longhorn-Beetle.png", family: "Cerambycidae")
+challenge11 = Challenge.create!(score: 1_300, poster: "Longhorn-Beetle.jpg", family: "Cerambycidae")
 challenge11.save
-challenge12 = Challenge.create!(score: 2_000, poster: "Cerastipsocus.png", family: "Psocidae")
+challenge12 = Challenge.create!(score: 2_000, poster: "Cerastipsocus.jpg", family: "Psocidae")
 challenge12.save
-challenge13 = Challenge.create!(score: 800, poster: "Stink-Bug.png", family: "Pentatomidae")
+challenge13 = Challenge.create!(score: 800, poster: "Stink-Bug.jpg", family: "Pentatomidae")
 challenge13.save
-challenge14 = Challenge.create!(score: 3_000, poster: "House-Cricket.png", family: "Gryllidae")
+challenge14 = Challenge.create!(score: 3_000, poster: "House-Cricket.jpg", family: "Gryllidae")
 challenge14.save
-challenge15 = Challenge.create!(score: 30_000, poster: "Giant-Water-Bug.png", family: "Belostomatidae")
+challenge15 = Challenge.create!(score: 30_000, poster: "Giant-Water-Bug.jpg", family: "Belostomatidae")
 challenge15.save
-challenge16 = Challenge.create!(score: 150, poster: "Mosquito.png", family: "Culicidae")
+challenge16 = Challenge.create!(score: 150, poster: "Mosquito.jpg", family: "Culicidae")
 challenge16.save
 
 puts "Creating badges"

@@ -13,6 +13,7 @@ class ChallengesController < ApplicationController
   def show
     @challenge = Challenge.find(params[:id])
     @achievement_collection = AchievementCollection.new
+  end
 
   def leaderboard
     users = User.all
