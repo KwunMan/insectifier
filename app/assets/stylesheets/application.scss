@@ -17,7 +17,7 @@
 
 
 body {
-
+  color: white;
   background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(34, 116, 165, 1) 33%, rgba(68, 159, 229, 1) 89%);
 
   .title {
@@ -26,12 +26,10 @@ body {
   }
 }
 
-a {
-  color: white;
-}
+
 
 h1 {
-  color: white;
+
   font-size: 70px;
   font-weight: bold;
   text-shadow:
@@ -46,7 +44,7 @@ h1 {
 }
 
 h2 {
-  color: #FFFFFF;
+
   margin-top: -3%;
 }
 
