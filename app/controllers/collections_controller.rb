@@ -1,7 +1,8 @@
 class CollectionsController < ApplicationController
 
   def index
-    @collections = Collection.where(user_id: current_user)
+    @collections = Collection.where(user_id: current_user).order("created_at DESC")
+
     if params[:search].present?
       collections = @collections.select do |collection|
         collection.insect.name.downcase.include?("#{params[:search]}".downcase)
@@ -9,7 +10,8 @@ class CollectionsController < ApplicationController
       @collections = collections
       @collections = @collections.flatten
     end
-    @unique_collections = @collections.reverse.uniq { |c| c.insect_id }.reverse
+
+    @unique_collections = @collections.reverse.uniq { |c| c.insect_id }
   end
 
   def show
@@ -20,11 +22,12 @@ class CollectionsController < ApplicationController
     @encounters.pop
     @encounters = @encounters.reverse
     # raise
-    collections = Collection.where(user_id: current_user)
+    collections = Collection.where(user_id: current_user).order("created_at DESC")
 
-    collections = collections.reverse.uniq { |c| c.insect_id }.reverse
+    collections = collections.reverse.uniq { |c| c.insect_id }
 
-    @number = collections.index { |c| c.id == @collection.id }
+    @number = collections.index { |c| c.id == find_collection.id }
+
   end
 
   def new
