@@ -1,22 +1,10 @@
-html,
-body {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  background: #84C10A;
-  margin: 0;
-  padding: 0;
+/* leaf */
+#loading-view {
+  position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
-h1 {
-  color: #779A31;
-  text-align: center;
-}
-
-/* leaf */
 .ladybird {
   font-size: 16px;
   background: transparent;
@@ -24,8 +12,8 @@ h1 {
   height: 20em;
   width: 30em;
   position: absolute;
-  bottom: -5em;
-  right: -3em;
+  bottom: 0em;
+  right: -5em;
   margin: 0;
   z-index: 3;
   box-shadow:
@@ -37,6 +25,24 @@ h1 {
   -webkit-animation: leaf 12s linear infinite;
   -moz-animation: leaf 12s linear infinite;
   animation: leaf 12s linear infinite;
+
+  html,
+  body {
+    width: 100%;
+    // height: 100%;
+  }
+
+  body {
+    background: #84C10A;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #779A31;
+    text-align: center;
+  }
 }
 
 .ladybird:before,
@@ -125,7 +131,7 @@ h1 {
 
 @-webkit-keyframes walk {
   0% {
-    -webkit-transform: translate3d(-200em, 200em, 0);
+    -webkit-transform: translate3d(0em, 200em, 0);
     opacity: 0;
     left: 50%;
   }
