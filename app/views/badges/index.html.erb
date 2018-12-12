@@ -7,6 +7,9 @@ Badges
       <% @badges.each do |badge| %>
       <div class="col-xs-3">
         <div class="card avatar" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path badge.image%>');">
+          <% unless badge.challenge.done?(current_user) %>
+          <%= image_tag "insect_badges/lock.png", class: 'lock-placement'  %>
+          <% end %>
           <%= link_to "", badge_path(badge), class: 'card-link' %>
         </div>
       </div>
