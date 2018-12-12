@@ -13,5 +13,6 @@ Rails.application.routes.draw do
   end
   resources :badges, only: [:index, :show]
   # patch '/challenges/:id', to: 'challenges#update', as: :challenge_update
+  get '/home', to: "pages#home", as: :home
 
 end

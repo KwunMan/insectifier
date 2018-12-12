@@ -4,7 +4,7 @@
     <%= image_tag "component2.png" %>
   </div>
   <br>
-  <%= simple_form_for @insect do |f| %>
+  <%= simple_form_for(@insect, remote: true) do |f| %>
   <label>
     <div class="btn-main ">
       <div class="btn-main-wrapper"></div>
@@ -13,7 +13,8 @@
     </div>
     <span style="display:none;">
 
-        <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "this.form.submit()" } %>
+        <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "navbar.style.visibility = 'hidden';  this.form.submit(); setTimeout(() => { wrapper.style.display = 'none'; tabs.style.display = 'none'; const loading = document.getElementById('loading-view');
+ loading.style.display = 'block'; }, 300) " } %>
         <%= f.input :photo_cache, as: :hidden %>
       </span>
   </label>
@@ -23,3 +24,20 @@
   <br>
 </div>
 <%= render 'shared/footer_index_active' %>
+<div id="loading-view" style="display: none">
+  <h1>Loading...</h1>
+  <div class="ladybird"></div>
+</div>
+<script>
+const form = document.getElementById("new_insect");
+console.log(form);
+const wrapper = document.querySelector(".wrapper")
+const tabs = document.querySelector(".tabs")
+const navbar = document.querySelector('.navbar-wagon')
+form.addEventListener("submit", () => {
+  console.log("click")
+  const loading = document.getElementById("loading-view")
+  loading.style.display = 'block'
+
+});
+</script>

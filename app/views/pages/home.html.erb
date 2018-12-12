@@ -1,20 +1,4 @@
-<% content_for :title do %>
-  Something
-<% end %>
-<div class="wrapper-main-page">
-  <div class="home-logo">
-    <%= image_tag ("component.png", size: "200x200") %>
-  </div>
-  <div class="container-main-page">
-    <div class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <h3>Upload</h3>
-    </div>
-  </div>
+<div id="loading-view">
+  <h1>Loading...</h1>
+  <div class="ladybird"></div>
 </div>
-<% content_for :home do %>
-  <%= render 'shared/footer' do %>
-    <%= yield :index %>
-  <% end %>
-<% end %>
