@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     resources :achievement_collections, only: [:create]
   end
   # patch '/challenges/:id', to: 'challenges#update', as: :challenge_update
+  get '/home', to: "pages#home", as: :home
 
 end

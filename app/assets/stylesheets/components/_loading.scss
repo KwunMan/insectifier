@@ -1,0 +1,523 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: #84C10A;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+h1 {
+  color: #779A31;
+  text-align: center;
+}
+
+/* leaf */
+.ladybird {
+  font-size: 20px;
+  background: transparent;
+  border-radius: 1% 100% 1% 10%;
+  height: 20em;
+  width: 30em;
+  position: absolute;
+  bottom: -5em;
+  right: 3em;
+  margin: 0;
+  z-index: 3;
+  box-shadow:
+    -16em 9em 0 -14em #072 inset,
+    -18em 7em 0 -13em #192 inset,
+    -22em 3em 0 -12em #072 inset,
+    -26em -0.3em 0 -12em #062 inset,
+    0 0 0 0 transparent;
+  -webkit-animation: leaf 12s linear infinite;
+  -moz-animation: leaf 12s linear infinite;
+  animation: leaf 12s linear infinite;
+}
+
+.ladybird:before,
+.ladybird:after {
+  font-size: 0.5em;
+  content: "";
+  display: block;
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  border-radius: 45% 50% 50% 50%;
+}
+
+/* ladybird body */
+.ladybird:before {
+  background: #c00;
+  height: 12em;
+  width: 12em;
+  z-index: 1;
+  box-shadow:
+    -5.4em -5.8em 0 -5.8em #222,
+    -5.4em -5.6em 0 -5.8em #222,
+    -6.4em -5.2em 0 -5.8em #222,
+    -6.2em -5.2em 0 -5.8em #222,
+    -6em -5.2em 0 -5.8em #222,
+    -3em -5.2em 0 -5.3em #ffc,
+    -5em -2.8em 0 -5em #ffc,
+    -3.2em -2.8em 0 -3em #222,
+    -4.8em -4.2em 0 -4.5em #000,
+    0em -1em 0 0.7em rgba(0, 0, 0, 0.2) inset,
+    0em -1em 0 -0.3em rgba(0, 0, 0, 0.2) inset,
+    2em 2em 0 -1.6em #333 inset,
+    -4.5em 4.5em 0 -3.4em #300 inset,
+    -4.5em 4.5em 0 -3.3em #300 inset,
+    0 0 0 0 transparent;
+  -webkit-animation:
+    walk 12s steps(60, end) infinite,
+    wing2 12s linear infinite;
+  -moz-animation:
+    walk 12s steps(60, end) infinite,
+    wing2 12s linear infinite;
+  animation:
+    walk 12s steps(60, end) infinite,
+    wing2 12s linear infinite;
+}
+
+/* ladybird spots */
+.ladybird:after {
+  background: transparent;
+  height: 1em;
+  width: 1em;
+  z-index: 10;
+  box-shadow:
+    4.5em 1.5em 0 0.5em #100,
+    8.8em 1.8em 0 0.5em #320,
+    3.8em 5.6em 0 0.8em #000,
+    7.2em 9.5em 0 0.5em #320,
+    10.8em 5.7em 0 0.2em #320,
+    2.8em 9.6em 0 0.5em #210,
+    0 0 0 0 transparent;
+  -webkit-animation:
+    walk 12s steps(60, end) infinite,
+    wing 12s linear infinite;
+  -moz-animation:
+    walk 12s steps(60, end) infinite,
+    wing 12s linear infinite;
+  animation:
+    walk 12s steps(60, end) infinite,
+    wing 12s linear infinite;
+}
+
+/* -webkit-animation */
+@-webkit-keyframes leaf {
+
+  88%,
+  91%,
+  97% {
+    -webkit-transform: translate3d(0, 0.5em, 0);
+  }
+
+  90%,
+  94% {
+    -webkit-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes walk {
+  0% {
+    -webkit-transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+    left: 50%;
+  }
+
+  9% {
+    -webkit-transform: translate3d(25em, 200em, 0);
+    opacity: 0;
+  }
+
+  10% {
+    -webkit-transform: translate3d(25em, 40em, 0);
+    opacity: 1;
+  }
+
+  50% {
+    left: 60%;
+  }
+
+  65%,
+  90% {
+    -webkit-transform: translate3d(-16em, -27em, 0);
+    left: 50%;
+  }
+
+  91% {
+    -webkit-transform: translate3d(-18em, -80em, 0);
+  }
+
+  93% {
+    -webkit-transform: translate3d(-30em, -100em, 0);
+    opacity: 1;
+  }
+
+  95% {
+    -webkit-transform: translate3d(-200em, -200em, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+  }
+}
+
+/* ladybird spots changes to wings */
+@-webkit-keyframes wing {
+
+  0%,
+  83.9% {
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    top: 50%;
+    box-shadow:
+      4.5em 1.5em 0 0.5em #100,
+      8.8em 1.8em 0 0.5em #320,
+      3.8em 5.6em 0 0.8em #000,
+      7.2em 9.5em 0 0.5em #320,
+      10.8em 5.7em 0 0.2em #320,
+      2.8em 9.6em 0 0.5em #210,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    border-radius: 80% 0;
+    height: 5em;
+    width: 6em;
+    top: 30%;
+    box-shadow:
+      -2.6em 8.6em 0 -0.5em rgba(255, 255, 255, 0.2),
+      -2.8em 9.5em 0 1em #c00,
+      5.8em 1.5em 0 -0.5em rgba(255, 255, 255, 0.2),
+      5.5em 2.5em 0 1.0em #d00,
+      5.5em 2.7em 0 1.3em #a00,
+      6.8em 3.6em 0 1.6em rgba(80, 0, 0, 0.7),
+      -2.8em 12em 0 1.6em rgba(80, 0, 0, 0.7),
+      0 0 0 0 transparent;
+  }
+}
+
+@-webkit-keyframes wing2 {
+
+  0%,
+  82.9% {
+    background: #c00;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #222,
+      -4.8em -4.2em 0 -4.5em #000,
+      0em -1em 0.5em 0.7em rgba(0, 0, 0, 0.2) inset,
+      0em -1em 0.5em -0.3em rgba(0, 0, 0, 0.2) inset,
+      2em 2em 0 -1.6em #333 inset,
+      -4.5em 4.5em 0 -3.4em #d00 inset,
+      -4.5em 4.5em 0 -3.3em #300 inset,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    background: #200;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #200,
+      0 0 0 0 transparent;
+  }
+}
+
+/* -moz-animation */
+@-moz-keyframes leaf {
+
+  88%,
+  91%,
+  97% {
+    -moz-transform: translate3d(0, 0.5em, 0);
+  }
+
+  90%,
+  94% {
+    -moz-transform: translate3d(0, 0, 0);
+  }
+}
+
+@-moz-keyframes walk {
+  0% {
+    -moz-transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+    left: 50%;
+  }
+
+  9% {
+    -moz-transform: translate3d(25em, 200em, 0);
+    opacity: 0;
+  }
+
+  10% {
+    -moz-transform: translate3d(25em, 40em, 0);
+    opacity: 1;
+  }
+
+  50% {
+    left: 60%;
+  }
+
+  65%,
+  90% {
+    -moz-transform: translate3d(-16em, -27em, 0);
+    left: 50%;
+  }
+
+  91% {
+    -moz-transform: translate3d(-18em, -80em, 0);
+  }
+
+  93% {
+    -moz-transform: translate3d(-30em, -100em, 0);
+    opacity: 1;
+  }
+
+  95% {
+    -moz-transform: translate3d(-200em, -200em, 0);
+    opacity: 0;
+  }
+
+  100% {
+    -moz-transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+  }
+}
+
+/* ladybird spots changes to wings */
+@-moz-keyframes wing {
+
+  0%,
+  83.9% {
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    top: 50%;
+    box-shadow:
+      4.5em 1.5em 0 0.5em #100,
+      8.8em 1.8em 0 0.5em #320,
+      3.8em 5.6em 0 0.8em #000,
+      7.2em 9.5em 0 0.5em #320,
+      10.8em 5.7em 0 0.2em #320,
+      2.8em 9.6em 0 0.5em #210,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    border-radius: 80% 0;
+    height: 5em;
+    width: 6em;
+    top: 30%;
+    box-shadow:
+      -2.6em 8.6em 0 -0.5em rgba(255, 255, 255, 0.2),
+      -2.8em 9.5em 0 1em #c00,
+      5.8em 1.5em 0 -0.5em rgba(255, 255, 255, 0.2),
+      5.5em 2.5em 0 1.0em #d00,
+      5.5em 2.7em 0 1.3em #a00,
+      6.8em 3.6em 0 1.6em rgba(80, 0, 0, 0.7),
+      -2.8em 12em 0 1.6em rgba(80, 0, 0, 0.7),
+      0 0 0 0 transparent;
+  }
+}
+
+@-moz-keyframes wing2 {
+
+  0%,
+  82.9% {
+    background: #c00;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #222,
+      -4.8em -4.2em 0 -4.5em #000,
+      0em -1em 0.5em 0.7em rgba(0, 0, 0, 0.2) inset,
+      0em -1em 0.5em -0.3em rgba(0, 0, 0, 0.2) inset,
+      2em 2em 0 -1.6em #333 inset,
+      -4.5em 4.5em 0 -3.4em #d00 inset,
+      -4.5em 4.5em 0 -3.3em #300 inset,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    background: #200;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #200,
+      0 0 0 0 transparent;
+  }
+}
+
+/* animation */
+@keyframes leaf {
+
+  88%,
+  91%,
+  97% {
+    transform: translate3d(0, 0.5em, 0);
+  }
+
+  90%,
+  94% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes walk {
+  0% {
+    transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+    left: 50%;
+  }
+
+  9% {
+    transform: translate3d(25em, 200em, 0);
+    opacity: 0;
+  }
+
+  10% {
+    transform: translate3d(25em, 40em, 0);
+    opacity: 1;
+  }
+
+  50% {
+    left: 60%;
+  }
+
+  65%,
+  90% {
+    transform: translate3d(-16em, -27em, 0);
+    left: 50%;
+  }
+
+  91% {
+    transform: translate3d(-18em, -80em, 0);
+  }
+
+  93% {
+    transform: translate3d(-30em, -100em, 0);
+    opacity: 1;
+  }
+
+  95% {
+    transform: translate3d(-200em, -200em, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(-200em, 200em, 0);
+    opacity: 0;
+  }
+}
+
+/* ladybird spots changes to wings */
+@keyframes wing {
+
+  0%,
+  83.9% {
+    border-radius: 50%;
+    height: 1em;
+    width: 1em;
+    top: 50%;
+    box-shadow:
+      4.5em 1.5em 0 0.5em #100,
+      8.8em 1.8em 0 0.5em #320,
+      3.8em 5.6em 0 0.8em #000,
+      7.2em 9.5em 0 0.5em #320,
+      10.8em 5.7em 0 0.2em #320,
+      2.8em 9.6em 0 0.5em #210,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    border-radius: 80% 0;
+    height: 5em;
+    width: 6em;
+    top: 30%;
+    box-shadow:
+      -2.6em 8.6em 0 -0.5em rgba(255, 255, 255, 0.2),
+      -2.8em 9.5em 0 1em #c00,
+      5.8em 1.5em 0 -0.5em rgba(255, 255, 255, 0.2),
+      5.5em 2.5em 0 1.0em #d00,
+      5.5em 2.7em 0 1.3em #a00,
+      6.8em 3.6em 0 1.6em rgba(80, 0, 0, 0.7),
+      -2.8em 12em 0 1.6em rgba(80, 0, 0, 0.7),
+      0 0 0 0 transparent;
+  }
+}
+
+@keyframes wing2 {
+
+  0%,
+  82.9% {
+    background: #c00;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #222,
+      -4.8em -4.2em 0 -4.5em #000,
+      0em -1em 0.5em 0.7em rgba(0, 0, 0, 0.2) inset,
+      0em -1em 0.5em -0.3em rgba(0, 0, 0, 0.2) inset,
+      2em 2em 0 -1.6em #333 inset,
+      -4.5em 4.5em 0 -3.4em #d00 inset,
+      -4.5em 4.5em 0 -3.3em #300 inset,
+      0 0 0 0 transparent;
+  }
+
+  84%,
+  90% {
+    background: #200;
+    box-shadow:
+      -5.4em -5.8em 0 -5.8em #222,
+      -5.4em -5.6em 0 -5.8em #222,
+      -6.4em -5.2em 0 -5.8em #222,
+      -6.2em -5.2em 0 -5.8em #222,
+      -6em -5.2em 0 -5.8em #222,
+      -3em -5.2em 0 -5.3em #ffc,
+      -5em -2.8em 0 -5em #ffc,
+      -3.2em -2.8em 0 -3em #200,
+      0 0 0 0 transparent;
+  }
+}
