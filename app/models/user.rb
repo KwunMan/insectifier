@@ -11,6 +11,7 @@ class User < ApplicationRecord
 
   has_many :achievement_collections
   has_many :challenges, through: :achievement_collections
+  has_many :badges, through: :challenges
 
   attr_writer :login
 
