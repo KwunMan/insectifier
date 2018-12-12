@@ -16,12 +16,14 @@ class CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params[:id])
     @encounters = current_user.collections.select { |collection| collection.insect.name == @collection.insect.name}
+    raise
     @encounters.pop
 
     collections = Collection.where(user_id: current_user)
 
     collections = collections.reverse.uniq { |c| c.insect_id }
     @number = collections.index { |c| c.id == @collection.id }
+
 
 
 
