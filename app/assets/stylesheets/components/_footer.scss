@@ -2,11 +2,13 @@
   background: $blue;
   display: flex;
   height: 50px;
+
 }
 
 .tabs a {
   color: black;
   text-decoration: none;
+  z-index: 2;
 }
 
 
@@ -25,12 +27,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
   // border-left: 1px solid black;
 }
 
 a.tab:hover {
   background: #63c687;
-
 }
 
 

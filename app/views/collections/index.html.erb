@@ -1,5 +1,5 @@
 <% content_for :title do %>
-Collection
+  Collection
 <% end %>
 <div class="wrapper-content-page">
   <div class="container">
@@ -18,23 +18,23 @@ Collection
       </div>
     </div>
     <% if @collections.present? %>
-    <div class="row-card">
-      <div class="cards">
-        <% @unique_collections.each do |collection| %>
-        <div class="col-xs-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
-            <%= link_to "", collection_path(collection), class: 'card-link' %>
-            <div class="card-rare">
-              <%= collection.insect.rarity %>
+      <div class="row-card">
+        <div class="cards">
+          <% @unique_collections.each do |collection| %>
+            <div class="col-xs-3">
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path collection.picture %>' );">
+                <div class="card-rare">
+                  <%= collection.insect.rarity %>
+                </div>
+                <div class="card-name">
+                  <h4><%= collection.insect.name %></h4>
+                </div>
+                <%= link_to "", collection_path(collection), class: 'card-link' %>
+              </div>
             </div>
-            <div class="card-name">
-              <h4><%= collection.insect.name %></h4>
-            </div>
-          </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
-    </div>
     <% end %>
   </div>
   <br>
