@@ -1,8 +1,5 @@
 .container-content-page {
-  // margin: 0 auto;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+
   h2 {
     margin-top:0;
   }
@@ -39,7 +36,6 @@
 
 
 .image {
-  // width: 50%;
   display: flex;
   flex: 1 1 50%;
 }
@@ -66,25 +62,11 @@
   height: calc(50vh - 180px);
 }
 
-// .description p {
-//   padding-left: 10px;
-
-//   // @media screen and (min-width: 600px) {
-//   //   width: 700px;
-//   // }
-// }
 
 .photo {
-  // width: 100%;
   border-radius: 10px;
-  // flex: 1 1 50%;
 }
 
-// .description p {
-//   @media screen and (min-width: 600px) {
-//     width: 700px;
-//   }
-// }
 
 .magnify {
   background-color: orange;
