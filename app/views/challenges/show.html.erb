@@ -17,21 +17,10 @@ Challenge already completed!
 <% content_for :title do %>
 Catch!
 <% end %>
-<<<<<<< HEAD
-<div class="wrapper">
-  <div class="container-challenge-page">
-    <div class="challenge-image">
-      <%= image_tag @challenge.poster, :size =>'280x420' %>
-    </div>
-  </div>
-</div>
-<div class="container-main-page">
-=======
 <div class="wrapper-challenge">
   <div class="container-challenge-page" id="not-completed">
     <%= image_tag @challenge.poster,:id =>"poster", :class => "rounded"%>
   </div>
->>>>>>> master
   <ul class="list-inline">
     <li>
       <% if @challenge.condition_fullfilled?(current_user) %>
