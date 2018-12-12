@@ -21,8 +21,7 @@ body {
 }
 
 body {
-  display: flex;
-  flex-direction: column;
+
   background: linear-gradient(135deg, rgba(30, 87, 153, 1) 0%, rgba(34, 116, 165, 1) 33%, rgba(68, 159, 229, 1) 89%);
 
   .title {
@@ -30,9 +29,11 @@ body {
     margin-bottom: 0%;
   }
 }
+
 a {
   color: white;
 }
+
 h1 {
   color: white;
   font-size: 70px;
@@ -47,6 +48,7 @@ h1 {
     -1px 1px 0 #000,
     -1px 0 0 #000;
 }
+
 h2 {
   color: #FFFFFF;
   margin-top: -3%;
