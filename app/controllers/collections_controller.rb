@@ -9,22 +9,22 @@ class CollectionsController < ApplicationController
       @collections = collections
       @collections = @collections.flatten
     end
-    @unique_collections = @collections.reverse.uniq { |c| c.insect_id }
-
+    @unique_collections = @collections.reverse.uniq { |c| c.insect_id }.reverse
   end
 
   def show
-    @collection = Collection.find(params[:id])
-    @encounters = current_user.collections.select { |collection| collection.insect.name == @collection.insect.name}
-    @encounters.pop
+    find_collection = Collection.find(params[:id])
+    @encounters = current_user.collections.select { |collection| collection.insect.name == find_collection.insect.name}
+    @collection = @encounters.last
 
+    @encounters.pop
+    @encounters = @encounters.reverse
+    # raise
     collections = Collection.where(user_id: current_user)
 
-    collections = collections.reverse.uniq { |c| c.insect_id }
+    collections = collections.reverse.uniq { |c| c.insect_id }.reverse
+
     @number = collections.index { |c| c.id == @collection.id }
-
-
-
   end
 
   def new

@@ -1,20 +1,8 @@
 /* leaf */
-html,
-body {
-  width: 100%;
-  // height: 100%;
-}
-
-body {
-  background: #84C10A;
-  margin: 0;
-  padding: 0;
+#loading-view {
+  position: relative;
+  height: 100vh;
   overflow: hidden;
-}
-
-h1 {
-  color: #779A31;
-  text-align: center;
 }
 
 .ladybird {
@@ -25,7 +13,7 @@ h1 {
   width: 30em;
   position: absolute;
   bottom: 0em;
-  right: 0em;
+  right: -5em;
   margin: 0;
   z-index: 3;
   box-shadow:
@@ -38,7 +26,23 @@ h1 {
   -moz-animation: leaf 12s linear infinite;
   animation: leaf 12s linear infinite;
 
+  html,
+  body {
+    width: 100%;
+    // height: 100%;
+  }
 
+  body {
+    background: #84C10A;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  h1 {
+    color: #779A31;
+    text-align: center;
+  }
 }
 
 .ladybird:before,
