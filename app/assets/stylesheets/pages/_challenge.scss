@@ -1,5 +1,5 @@
 .wrapper-challenge {
-  height: calc(100vh - 140px);
+  height: calc(100vh - 200px);
   text-align: center;
   margin-top: 20px;
   display: flex;
@@ -17,7 +17,7 @@
 }
 
 .wrapper-challenge button {
-  margin-bottom: 50px;
+
   max-width: 160px;
 
 }
@@ -137,4 +137,9 @@
   position: absolute;
   left: 20px;
   bottom: -5px;
+}
+
+.margin-left {
+  margin-left: 5px;
+  margin-bottom: 39px;
 }

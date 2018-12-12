@@ -7,7 +7,7 @@ Challenges
       <%= "Your score - #{@score} Pt." %>
     </p>
   </div>
-  <div class="challenge-cards">
+  <div class="row challenge-cards margin-left">
     <% @challenges.each do |challenge| %>
     <div class="col-xs-3">
       <% if challenge.done?(current_user) %>

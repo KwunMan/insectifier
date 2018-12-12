@@ -29,11 +29,13 @@ Badge is locked
   <p>In order to unlock this badge you must complete the challenge: Catch
     <%= indefinite_articlerize(@badge.challenge.poster.chomp(".jpg"))  %>
   </p>
+  <%= link_to badges_path do %>
   <button class="btn-main">
     <div class="btn-main-wrapper"></div>
     <div class="btn-main-white-top"></div>
-    <h3><%= link_to "Return", badges_path%></h3>
+    <h3>Return</h3>
   </button>
+  <% end %>
 </div>
 <% end %>
 <%= render 'shared/footer_challenge_active' %>
