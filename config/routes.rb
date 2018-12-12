@@ -6,9 +6,10 @@ Rails.application.routes.draw do
   resources :insects, only: [:show, :create, :new]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :collections, only: [:index, :create ,:update, :show]
+  get '/leaderboard', to: 'challenges#leaderboard', as: 'leaderboard'
   resources :challenges, only: [:show, :index] do
     resources :achievement_collections, only: [:create]
-    # resources :badges, only: [:show]
+
   end
   resources :badges, only: [:index, :show]
   # patch '/challenges/:id', to: 'challenges#update', as: :challenge_update

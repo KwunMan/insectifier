@@ -1,33 +1,28 @@
 <% if @challenge.done?(current_user) %>
 <% content_for :title do %>
-Already hunted
+Challenge already completed!
 <% end %>
-<div class="wrapper">
+<div class="wrapper-challenge">
   <div class="container-challenge-page">
-    <%= image_tag(@challenge.poster, :class =>"done-card", :size =>'280x420') %>
-    <%= image_tag("completed.png", :class => "absolute-card", :size =>'260x260') %>
+    <%= image_tag(@challenge.poster, :class => "rounded",:size =>'280x370') %>
+    <%= image_tag("completed.png", :class => "absolute-card",:size =>'260x260') %>
   </div>
+  <button class="btn-main">
+    <div class="btn-main-wrapper"></div>
+    <div class="btn-main-white-top"></div>
+    <h3><%= link_to "Return", challenges_path %></h3>
+  </button>
 </div>
 <% else %>
 <% content_for :title do %>
 Catch!
 <% end %>
-<div class="wrapper">
-  <div class="container-challenge-page">
-    <div class="challenge-image">
-      <%= image_tag @challenge.poster, :size =>'280x420' %>
-    </div>
+<div class="wrapper-challenge">
+  <div class="container-challenge-page" id="not-completed">
+    <%= image_tag @challenge.poster,:id =>"poster", :class => "rounded"%>
   </div>
-  <div class="challenge-description">
-    <p>
-      <%= "Catch #{@challenge.poster.chop.chop.chop.chop} to get #{@challenge.score}pt!" %>
-    </p>
-  </div>
-</div>
-<div class="container-main-page">
   <ul class="list-inline">
     <li>
-
       <% if @challenge.condition_fullfilled?(current_user) %>
       <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
       <button class="btn-main">
@@ -42,7 +37,6 @@ Catch!
         <div class="btn-main-white-top"></div>
         <h3>Claim reward</h3>
       </button>
-
       <% end %>
     </li>
   </ul>

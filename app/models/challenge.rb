@@ -8,6 +8,5 @@ class Challenge < ApplicationRecord
 
   def condition_fullfilled?(user)
     user.insects.find_by family: self.family
-
   end
 end

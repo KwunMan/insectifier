@@ -9,8 +9,14 @@ class ChallengesController < ApplicationController
     end
   end
 
+
   def show
     @challenge = Challenge.find(params[:id])
     @achievement_collection = AchievementCollection.new
+
+  def leaderboard
+    users = User.all
+    @users = users.sort {|aa, bb| bb.challenge_score <=> aa.challenge_score}
+
   end
 end

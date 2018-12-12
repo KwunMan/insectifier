@@ -33,6 +33,7 @@ Badge.destroy_all
 # end
 
 puts "creating challenge"
+
 challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.png", family: "Scarabaeidae")
 challenge1.save
 challenge2 = Challenge.create!(score: 100, poster: "Ant.png", family: "Formicidae")
@@ -99,3 +100,4 @@ badge = Badge.create!(image: "insect_badges/Giant-Water-Bug.jpg", challenge_id: 
 badge.save
 badge = Badge.create!(image: "insect_badges/Mosquito.jpg", challenge_id: challenge16.id)
 badge.save
+
