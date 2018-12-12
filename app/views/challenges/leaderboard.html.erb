@@ -8,31 +8,25 @@ Ranking
       <li>
         <% if i < 3  %>
         <%= image_tag("#{i+1}-medal.png", :class => "medal") %>
-        <div class="leader-username">
-          <p>
-            <%= user.username %>
-          </p>
-        </div>
-        <div class="leader-score">
-          <p>
-            <%= "#{user.challenge_score} pt" %>
-          </p>
-        </div>
         <% else %>
         <div class="rank">
           <h3><%= "#{i+1}." %></h3>
         </div>
+        <% end %>
+        <%= image_tag("avatar.png", :class => "leader-avatar") %>
         <div class="leader-username">
           <p>
             <%= user.username %>
           </p>
         </div>
-        <div class="leader-score">
-          <p>
-            <%= "#{user.challenge_score} pt" %>
-          </p>
+        <div class="score-trophy">
+          <div class="leader-score">
+            <p>
+              <%= user.total_score %>
+            </p>
+          </div>
+          <%= image_tag("trophy.png", :class => "trophy") %>
         </div>
-        <% end %>
       </li>
     </ul>
   </div>
