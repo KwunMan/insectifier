@@ -1,14 +1,15 @@
 <% content_for :title do %>
 Challenges
 <% end %>
-<div class="subtitle" style="display:flex; justify-content: space-around; align-items:center; margin-bottom:15px;">
+<div class="subtitle">
   <p>
-    <%= "Challenge score - #{@score} Pt." %> </p>
+    <%= "Challenge score: #{@score}" %>
+  </p>
   <button class="btn-main" id="small">
     <div class="btn-main-wrapper" id="small" style="padding-bottom:0px;"></div>
     <div class="btn-main-white-top" id="small"></div>
     <%= link_to leaderboard_path, method: :get do %>
-      <%= image_tag("award.png", size: '25x25', style: "-webkit-filter: invert(1);") %>
+    <%= image_tag("award.png", size: '25x25', style: "-webkit-filter: invert(1);") %>
     <% end %>
   </button>
 </div>
