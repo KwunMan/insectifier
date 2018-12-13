@@ -40,13 +40,19 @@ a.tab:hover {
   background: #63c687;
   color: white;
   flex: 0 0 40%;
-  border-left: none;
   // border-right: 1px solid black;
 }
 
 .padding-bottom {
   padding-bottom: 50px;
 }
+
+.middle {
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+
+}
+
 // footer {
 //   position: relative;
 //   flex-shrink: 0;
