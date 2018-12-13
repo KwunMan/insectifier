@@ -2,4 +2,4 @@ meta_product_name: "Insectifier"
 meta_title: "Insectifier - Identify and collect insects!"
 meta_description: "Insectifier is an application created to identify insects just by uploading or taking a picture of an insect."
 meta_image: "cover.png"                       # should exist in `app/assets/images/`
-twitter_account: "none"   # required for Twitter Cards
+
