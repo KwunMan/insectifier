@@ -36,7 +36,7 @@ Challenge.destroy_all
 
 puts "creating challenge"
 
-challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.jpg", family: "Scarabaeidae")
+challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.jpg", family: "Lucanidae")
 challenge2 = Challenge.create!(score: 100, poster: "Ant.jpg", family: "Formicidae")
 challenge3 = Challenge.create!(score: 1_500, poster: "Butterfly.jpg", family: "Papilionidae")
 challenge4 = Challenge.create!(score: 900, poster: "Dragonfly.jpg", family: "Libellulidae")
