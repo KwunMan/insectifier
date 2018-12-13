@@ -60,7 +60,7 @@ class InsectsController < ApplicationController
       html_file = open(url).read
       html_doc = Nokogiri::HTML(html_file)
       description = html_doc.xpath('//*[@id="mw-content-text"]/div/p[2]').text
-      danger_array = ['venom', 'pois', 'dang', 'bit', 'sting', 'widow', 'wasp', 'bee', 'bullet ant' ,'tarantula hawk', 'bull ant', 'yellowjacket' ,'harvester ant', 'butterfly']
+      danger_array = ['venom', 'pois', 'dang', 'bit', 'sting', 'widow', 'wasp', ' bee ', 'bullet ant', 'tarantula hawk', 'bull ant', 'yellowjacket', 'harvester ant', 'butterfly']
       dangerous = false
       dangerous = true if danger_array.any? { |danger| description.include? danger }
       text = html_doc.search('.infobox.biota').text.split(' ')
