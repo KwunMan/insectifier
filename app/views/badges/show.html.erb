@@ -1,43 +1,48 @@
 <% if @badge.challenge.done?(current_user) %>
-<% content_for :title do %>
-Badge unlocked!
-<% end %>
-<div class="wrapper-challenge">
-  <p>Congratulations! You are now able to use this badge as your reward for catching
-    <%= indefinite_articlerize(@badge.challenge.poster.chomp(".jpg")) %>.
-  </p>
-  <div class="badges-buttons">
-    <%= link_to badges_path do %>
-    <button class="btn-main-red">
-      <div class="btn-main-wrapper-red"></div>
-      <div class="btn-main-white-top"></div>
-      <h3>Cancel</h3>
-    </button>
-    <% end %>
-    <%= simple_form_for [@badge,current_user]  do |f| %>
-    <button class="btn-main">
-      <div class="btn-main-wrapper"></div>
-      <div class="btn-main-white-top"></div>
-      <h3>Use this badge</h3>
-      <% end %>
-    </button>
-  </div>
-</div>
-<% else %>
-<% content_for :title do %>
-Badge is locked
-<% end %>
-<div class="wrapper-challenge">
-  <p>In order to unlock this badge you must complete the challenge: Catch
-    <%= indefinite_articlerize(@badge.challenge.poster.chomp(".jpg"))  %>
-  </p>
-  <%= link_to badges_path do %>
-  <button class="btn-main">
-    <div class="btn-main-wrapper"></div>
-    <div class="btn-main-white-top"></div>
-    <h3>Return</h3>
-  </button>
+  <% content_for :title do %>
+    Badge unlocked!
   <% end %>
-</div>
+  <div class="wrapper-challenge">
+    <p>Congratulations! You are now able to use this badge as your reward for catching
+      <%= indefinite_articlerize(@badge.challenge.poster.chomp(".jpg")) %>.
+    </p>
+    <p><%= image_tag(@badge.image, style: "border-radius: 50%;", size:'280x280') %></p>
+    <br>
+    <div class="badges-buttons">
+      <%= link_to badges_path do %>
+        <button class="btn-main-red">
+          <div class="btn-main-wrapper-red"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Cancel</h3>
+        </button>
+      <% end %>
+      <%= simple_form_for [@badge,current_user]  do |f| %>
+        <button class="btn-main">
+          <div class="btn-main-wrapper"></div>
+          <div class="btn-main-white-top"></div>
+          <h3>Use this badge</h3>
+        <% end %>
+      </button>
+    </div>
+  </div>
+<% else %>
+  <% content_for :title do %>
+    Badge is locked
+  <% end %>
+  <div class="wrapper-challenge">
+    <p>In order to unlock this badge you must complete the challenge: Catch
+      <%= indefinite_articlerize(@badge.challenge.poster.chomp(".jpg"))  %></p>
+    <div class="badge-inactive card" style="position:relative; width:280px; height:280px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= image_path @badge.image %>');">
+      <%= image_tag "insect_badges/lock.png", class: 'lock-placement-large', size: '70x70' %>
+    </div>
+    <br>
+    <%= link_to badges_path do %>
+      <button class="btn-main">
+        <div class="btn-main-wrapper"></div>
+        <div class="btn-main-white-top"></div>
+        <h3>Return</h3>
+      </button>
+    <% end %>
+  </div>
 <% end %>
 <%= render 'shared/footer_neutral' %>
