@@ -20,7 +20,7 @@ Catch!
 <div class="wrapper-challenge">
   <div class="container-challenge-page" id="not-completed">
     <%= image_tag @challenge.poster,:id =>"poster", :class => "rounded"%>
-</div>
+  </div>
   <% if @challenge.condition_fullfilled?(current_user) %>
   <%= simple_form_for [@challenge, @achievement_collection]  do |f| %>
   <button class="btn-main">
@@ -30,10 +30,16 @@ Catch!
     <% end %>
   </button>
   <%else %>
-  <button class="btn-main gray">
+  <button onclick="showToast()" class="btn-main gray">
     <div class="btn-main-wrapper light_gray"></div>
     <div class="btn-main-white-top"></div>
     <h3>Claim reward</h3>
+    <script>
+    function showToast() {
+
+      toastr.error("You need to catch: <%=  @challenge.poster.chomp('.jpg')%> of the family: <%=  @challenge.family%>");
+    }
+    </script>
   </button>
   <% end %>
 </div>

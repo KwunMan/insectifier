@@ -23,8 +23,9 @@ gem 'google-cloud-vision'
 gem 'selenium-webdriver'
 gem 'nokogiri'
 
-###########
-
+########### ANIMATION
+gem 'toastr-rails'
+############
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~> 1.2'
 
