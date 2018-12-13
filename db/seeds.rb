@@ -37,69 +37,37 @@ Challenge.destroy_all
 puts "creating challenge"
 
 challenge1 = Challenge.create!(score: 10_000, poster: "Beetle.jpg", family: "Scarabaeidae")
-challenge1.save
 challenge2 = Challenge.create!(score: 100, poster: "Ant.jpg", family: "Formicidae")
-challenge2.save
 challenge3 = Challenge.create!(score: 1_500, poster: "Butterfly.jpg", family: "Papilionidae")
-challenge3.save
 challenge4 = Challenge.create!(score: 900, poster: "Dragonfly.jpg", family: "Libellulidae")
-challenge4.save
 challenge5 = Challenge.create!(score: 7_000, poster: "Locust.jpg", family: "Acrididae")
-challenge5.save
 challenge6 = Challenge.create!(score: 20_000, poster: "Tarantula.jpg", family: "Theraphosidae")
-challenge6.save
 challenge7 = Challenge.create!(score: 500, poster: "Fly.jpg", family: "Sarcophagidae")
-challenge7.save
 challenge8 = Challenge.create!(score: 12_000, poster: "Firefly.jpg", family: "Coleoptera")
-challenge8.save
-challenge9 = Challenge.create!(score: 5_000, poster: "wasp.jpg", family: "Vespidae")
-challenge9.save
+challenge9 = Challenge.create!(score: 5_000, poster: "Wasp.jpg", family: "Vespidae")
 challenge10 = Challenge.create!(score: 700, poster: "Water-Strider.jpg", family: "Gerridae")
-challenge10.save
 challenge11 = Challenge.create!(score: 1_300, poster: "Longhorn-Beetle.jpg", family: "Cerambycidae")
-challenge11.save
 challenge12 = Challenge.create!(score: 2_000, poster: "Cerastipsocus.jpg", family: "Psocidae")
-challenge12.save
 challenge13 = Challenge.create!(score: 800, poster: "Stink-Bug.jpg", family: "Pentatomidae")
-challenge13.save
 challenge14 = Challenge.create!(score: 3_000, poster: "House-Cricket.jpg", family: "Gryllidae")
-challenge14.save
 challenge15 = Challenge.create!(score: 30_000, poster: "Giant-Water-Bug.jpg", family: "Belostomatidae")
-challenge15.save
 challenge16 = Challenge.create!(score: 150, poster: "Mosquito.jpg", family: "Culicidae")
-challenge16.save
 
 puts "Creating badges"
 badge = Badge.create!(image: "insect_badges/Beetle.jpg", challenge_id: challenge1.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Ant.jpg", challenge_id: challenge2.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Butterfly.jpg", challenge_id: challenge3.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Dragonfly.jpg", challenge_id: challenge4.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Locust.jpg", challenge_id: challenge5.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Tarantula.jpg", challenge_id: challenge6.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Fly.jpg", challenge_id: challenge7.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Firefly.jpg", challenge_id: challenge8.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Wasp.jpg", challenge_id: challenge9.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Water-Strider.jpg", challenge_id: challenge10.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Longhorn-Beetle.jpg", challenge_id: challenge11.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Cerastipsocus.jpg", challenge_id: challenge12.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Stink-Bug.jpg", challenge_id: challenge13.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/House-Cricket.jpg", challenge_id: challenge14.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Giant-Water-Bug.jpg", challenge_id: challenge15.id)
-badge.save
 badge = Badge.create!(image: "insect_badges/Mosquito.jpg", challenge_id: challenge16.id)
-badge.save
 
