@@ -90,7 +90,7 @@ class InsectsController < ApplicationController
     @collection.save!
     driver.quit
 
-    redirect_to insect_path(@insect, collection_id: @collection.id)
+    # redirect_to insect_path(@insect, collection_id: @collection.id)
   end
 
   def insect_params

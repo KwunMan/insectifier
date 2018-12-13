@@ -13,31 +13,41 @@
     </div>
     <span style="display:none;">
 
-        <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "navbar.style.visibility = 'hidden';  this.form.submit(); setTimeout(() => { wrapper.style.display = 'none'; tabs.style.display = 'none'; const loading = document.getElementById('loading-view');
- loading.style.display = 'block'; }, 300) " } %>
-        <%= f.input :photo_cache, as: :hidden %>
-      </span>
+          <%= f.input :photo, required: true, id: "file", :input_html => { onchange: "navbar.style.visibility = 'hidden'; setTimeout(() => { wrapper.style.display = 'none'; tabs.style.display = 'none'; const loading = document.getElementById('loading-view');
+   loading.style.display = 'block'; document.getElementById('submit').click(); const ladybird = document.getElementById('ladybird-container'); ladybird.classList.add('ladybird'); }, 300) " } %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </span>
   </label>
+  <input id="submit" type="submit" style="display: none">
   <% end %>
   <br>
   <br>
   <br>
 </div>
 <%= render 'shared/footer_index_active' %>
-<div class="text-center" id="loading-view" style="display: none">
+<div class="text-center" id="loading-view" style="display: none;">
   <h1>Insectifying...</h1>
-  <div class="ladybird"></div>
+  <div id="ladybird-container"></div>
 </div>
 <script>
 const form = document.getElementById("new_insect");
-console.log(form);
+// console.log(form);
 const wrapper = document.querySelector(".wrapper")
 const tabs = document.querySelector(".tabs")
 const navbar = document.querySelector('.navbar-wagon')
-form.addEventListener("submit", () => {
-  console.log("click")
-  const loading = document.getElementById("loading-view")
-  loading.style.display = 'block'
+// navbar.style.visibility = 'hidden';
+// wrapper.style.display = 'none';
+// tabs.style.display = 'none';
+// const loading = document.getElementById('loading-view');
+// loading.style.display = 'block';
+// setTimeout(() => {
+// const ladybird = document.getElementById('ladybird-container');
+// ladybird.classList.add('ladybird');
+// }, 300);
 
-});
+// form.addEventListener("submit", () => {
+//   console.log("click")
+//   const loading = document.getElementById("loading-view")
+//   loading.style.display = 'block'
+// });
 </script>
