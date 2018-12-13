@@ -44,6 +44,6 @@ class User < ApplicationRecord
 
 
   def total_score
-    challenge_score + 250 * collections.uniq { |c| c.insect_id }.size
+    challenge_score
   end
 end
