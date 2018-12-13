@@ -48,6 +48,12 @@ class InsectsController < ApplicationController
     @insect = Insect.find_by(scientific_name: scientific_name)
     if @insect.nil?
       join_scientific_species = scientific_name.gsub(' ','_')
+      if scientific_name == " Pepsis thisbe" ####HARD CODED FOR TARANTULA HAWKs
+        common_name = "Tarantula hawk"
+        join_scientific_species = "Tarantula_hawk"
+      end
+
+
 
       url = "https://en.wikipedia.org/wiki/#{join_scientific_species}"
 
@@ -78,6 +84,7 @@ class InsectsController < ApplicationController
       @insect.family = classification_hash['Family']
       @insect.dangerous = dangerous
       @insect.save!
+
     end
     @collection.insect = @insect
     @collection.save!
