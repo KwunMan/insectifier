@@ -7,7 +7,6 @@
   color: white;
   position: relative;
   border-radius: 5px;
-  margin-bottom: 10px;
 }
 
 .cards {}
@@ -38,7 +37,6 @@
   bottom: 0;
   right: 0;
   width: 100%;
-  z-index: 2;
   background: black;
   opacity: 0;
 }
@@ -47,15 +45,7 @@
   opacity: 0.1;
 }
 
-.row-card {
-  margin-right: 2px;
-}
-
-
 .insect-collection {
-  // margin: 30px;
-
-  // width: 200px;
 }
 
 .insect-number p {
@@ -68,12 +58,14 @@
 }
 
 .insect-collection {
-
   margin: 0px;
-
 }
 
 .avatar {
   border-radius: 50%;
   position: relative;
+}
+
+.paddings {
+  padding-left: 1%; padding-right:1%; padding-bottom:2%;
 }

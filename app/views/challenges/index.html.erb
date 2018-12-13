@@ -1,24 +1,24 @@
 <% content_for :title do %>
-Challenges
+  Challenges
 <% end %>
-<div>
-  <div class="score">
-    <p style="color: white;">
-      <%= "Challenge score - #{@score} Pt." %>
-    </p>
-  </div>
-  <div class="row challenge-cards margin-left">
+<div class="subtitle">
+  <p>
+    <%= "Challenge score - #{@score} Pt." %>
+  </p>
+</div>
+<div class="container padding-bottom">
+  <div class="row">
     <% @challenges.each do |challenge| %>
-    <div class="col-xs-3">
-      <% if challenge.done?(current_user) %>
-      <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= image_path challenge.poster%>');">
-        <%= image_tag("completed.png", :class => "absolute", :size =>'80x45') %>
-        <% else %>
-        <div class="challenge-card" style="background-image: url('<%= image_path challenge.poster%>');">
-          <% end %>
-          <%= link_to "", challenge_path(challenge), class: 'card-link' %>
+      <div class="col-xs-3 paddings" align="center">
+        <% if challenge.done?(current_user) %>
+          <div class="challenge-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),url('<%= image_path challenge.poster%>');">
+            <%= image_tag("completed.png", style: "margin-top:50%", :size =>'80x45') %>
+          <% else %>
+            <div class="challenge-card" style="background-image: url('<%= image_path challenge.poster%>');">
+            <% end %>
+            <%= link_to "", challenge_path(challenge), class: 'card-link' %>
+          </div>
         </div>
-      </div>
       <% end %>
     </div>
   </div>
