@@ -1,10 +1,14 @@
 <% content_for :title do %>
-Ranking
+leaderboard
 <% end %>
 <div class="leader-container">
   <ul>
     <% @users.each_with_index do |user, i|%>
+    <% if user == current_user %>
+    <li class="user-table">
+      <%else %>
     <li class="leader-table">
+      <%end %>
       <% if i < 3  %>
       <%= image_tag("#{i+1}-medal.png", :class => "medal") %>
       <% else %>
