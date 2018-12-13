@@ -12,6 +12,7 @@ class CollectionsController < ApplicationController
     end
 
     @unique_collections = @collections.reverse.uniq { |c| c.insect_id }
+    @collection_score = 250*@unique_collections.size
   end
 
   def show
@@ -52,5 +53,4 @@ class CollectionsController < ApplicationController
   def collection_params
     params.require(:collection).permit(:picture, :insect_id)
   end
-
 end

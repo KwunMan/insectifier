@@ -1,0 +1,83 @@
+.leader-score {
+  position: absolute;
+  right: 35px;
+  bottom: -6px;
+}
+
+.leader-table {
+  height: 46px;
+  background-color: #99C24D;
+  width: 100%;
+  margin: 10px 5px 15px -20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 3px 3px #6b6373;
+  color: white;
+  position: relative;
+  list-style-type: none;
+}
+
+.medal {
+  width: 30px;
+  display: inline-block;
+  vertical-align: middle;
+  position: absolute;
+  left: 3px;
+  bottom: 17px;
+
+
+  h3 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-align: center;
+
+  }
+}
+
+.leader-username {
+  padding-top: 10px;
+
+  @media (max-width: 767px) {
+    text-align: left;
+    margin-left: 80px;
+
+  }
+}
+
+.rank {
+  position: absolute;
+  left: 8px;
+  bottom: 0px;
+
+  h3 {
+    font-family: "Source Code Pro", monospace;
+    font-size: 25px;
+  }
+}
+
+.trophy {
+  position: absolute;
+  right: 5px;
+  bottom: 1px;
+  width: 25px;
+}
+
+.leader-avatar {
+  position: absolute;
+  top: 5px;
+  left: 37px;
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+}
+
+.score-trophy {
+  width: 105px;
+  height: 35px;
+  background-color: $green;
+  position: absolute;
+  bottom: 5px;
+  right: 10px;
+  box-shadow: 0px 0px 0px 2px #ADCAD6;
+  border-radius: 4px;
+
+}
