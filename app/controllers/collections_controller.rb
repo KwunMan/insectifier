@@ -19,9 +19,11 @@ class CollectionsController < ApplicationController
     find_collection = Collection.find(params[:id])
     @encounters = current_user.collections.select { |collection| collection.insect.name == find_collection.insect.name}
     @collection = @encounters.last
-
     @encounters.pop
-    @encounters = @encounters.reverse
+
+    @encounters =@encounters.reverse
+
+
     # raise
     collections = Collection.where(user_id: current_user).order("created_at DESC")
 
