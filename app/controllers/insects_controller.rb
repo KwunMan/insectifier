@@ -1,12 +1,13 @@
 require "selenium-webdriver"
 require 'nokogiri'
 require 'open-uri'
+require 'rubygems'
+
 
 class InsectsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :show, :create]
   def new
     @insect = Insect.new
-    # @collection = Collection.new
   end
 
   def show
@@ -19,10 +20,15 @@ class InsectsController < ApplicationController
     @collection.picture = insect_params[:photo]
     wait = Selenium::WebDriver::Wait.new(:timeout => 6)
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     driver = Selenium::WebDriver.for :chrome, options: options
-    driver.navigate.to "https://www.inaturalist.org/computer_vision_demo"
+    driver.get "https://www.inaturalist.org/computer_vision_demo"
     file = @collection.picture.file.file
+    user_fill = driver.find_element(:id => "user_email")
+    password_fill = driver.find_element(:id => "user_password")
+    user_fill.send_key ENV['USERNAME']
+    password_fill.send_key ENV['PASSWORD']
+    password_fill.submit
     button = driver.find_element(:xpath => "//*[@id='app']/div/div/input")
     button.send_key file
 
@@ -52,8 +58,6 @@ class InsectsController < ApplicationController
         common_name = "Tarantula hawk"
         join_scientific_species = "Tarantula_hawk"
       end
-
-
 
       url = "https://en.wikipedia.org/wiki/#{join_scientific_species}"
 
@@ -94,6 +98,6 @@ class InsectsController < ApplicationController
   end
 
   def insect_params
-    params.require(:insect).permit(:photo)
+    params.require(:insect).permit(:photo,:photo_cache)
   end
 end
