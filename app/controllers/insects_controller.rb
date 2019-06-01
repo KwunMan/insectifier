@@ -21,7 +21,7 @@ class InsectsController < ApplicationController
     wait = Selenium::WebDriver::Wait.new(:timeout => 6)
     options = Selenium::WebDriver::Chrome::Options.new
     options.add_argument('--headless')
-    options.add_argument'--no-sandbox')
+    options.add_argument('--no-sandbox')
     driver = Selenium::WebDriver.for :chrome, options: options
     driver.get "https://www.inaturalist.org/computer_vision_demo"
     file = @collection.picture.file.file
